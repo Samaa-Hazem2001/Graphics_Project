@@ -59,7 +59,6 @@ namespace our {
 
         void set(const std::string &uniform, glm::vec2 value) {
             //TODO: (Req 1) Send the given 2D vector value to the given uniform
-            glUniform2f(getUniformLocation(uniform), value.x, value.y);
         }
  
         void set(const std::string &uniform, glm::vec3 value) {
