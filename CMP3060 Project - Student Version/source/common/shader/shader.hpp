@@ -23,7 +23,7 @@ namespace our {
         ~ShaderProgram(){
             //TODO: (Req 1) Delete a shader program
             if(program)
-               glDeleteProgram(program);
+            glDeleteProgram(program);
 
         }
 
