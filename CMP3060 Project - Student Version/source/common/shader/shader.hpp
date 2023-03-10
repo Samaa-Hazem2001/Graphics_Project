@@ -18,9 +18,13 @@ namespace our {
     public:
         ShaderProgram(){
             //TODO: (Req 1) Create A shader program
+            program=glCreateProgram();
         }
         ~ShaderProgram(){
             //TODO: (Req 1) Delete a shader program
+            if(program)
+               glDeleteProgram(program);
+
         }
 
         bool attach(const std::string &filename, GLenum type) const;
@@ -50,7 +54,7 @@ namespace our {
         void set(const std::string &uniform, glm::vec2 value) {
             //TODO: (Req 1) Send the given 2D vector value to the given uniform
         }
-
+ ////////////////////////////////////////////
         void set(const std::string &uniform, glm::vec3 value) {
             //TODO: (Req 1) Send the given 3D vector value to the given uniform
         }
