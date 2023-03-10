@@ -14,6 +14,5 @@ uniform vec3 colors[2];
 void main(){
     //x 0:31=0 32:63=1 64:95=0
     // //y 0:31=0 32:63=1 64:95=0
-    // if(gl_FragCoord.x >= )
     frag_color = vec4(colors[0], 1.0);
 }
