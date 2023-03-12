@@ -246,7 +246,6 @@ int our::Application::run(int run_for_frames) {
 
         //change background edited by me
         // glClearColor( 0.4375, 0.6875, 0.9375, 1.0);
-        // glClear(GL_COLOR_BUFFER_BIT);
         //glfwSwapBuffers(window); 
         // Start a new ImGui frame
         ImGui_ImplOpenGL3_NewFrame();
