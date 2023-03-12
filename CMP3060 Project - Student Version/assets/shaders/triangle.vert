@@ -9,10 +9,10 @@ out Varyings {
     vec3 color;
 } vs_out;
 
-// in vec3 position;
+//in vec3 position;
 
-uniform vec2 translation;
-uniform vec2 scale;
+uniform vec2 translation = vec2(0.0, 0.0);
+uniform vec2 scale=vec2(1.0, 1.0);
 
 // Currently, the triangle is always in the same position, but we don't want that.
 // So two uniforms should be added: translation (vec2) and scale (vec2).
@@ -23,23 +23,18 @@ uniform vec2 scale;
 
 void main(){
 
-const vec4 position[3] = vec3[3] (
+const vec3 position[3] = vec3[3] (
         vec3(-0.5,-0.5,0.0),
         vec3(0.5,-0.5,0.0),
         vec3(0.0,0.5,1.0)
     );
-    const vec4 colors[3] = vec3[3] (
+    const vec3 color[3] = vec3[3] (
         vec3(1.0,0.0,0.0),
         vec3(0.0,1.0,0.0),
         vec3(0.0,0.0,1.0)
     );
 
-    if(!scale){
-        scale[1]=vec2[1](vec2(1.0,1.0));
-    }
-    if(!translation){
-        translation[1]=vec2[1](vec2(0.0,0.0));
-    }
-    gl_Position = vec4(scale * position + translation ,1.0);
-    vs_out.color = colors ;
+    // gl_Position = scale *vec4( position ,1.0)+ translation ;
+    gl_Position = vec4(position[gl_VertexID], 1.0) ;
+    vs_out.color = color[gl_VertexID] ;
 }
