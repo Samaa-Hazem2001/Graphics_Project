@@ -2,6 +2,7 @@
 
 out vec4 frag_color;
 
+
 // In this shader, we want to draw a checkboard where the size of each tile is (size x size).
 // The color of the bottom-left most tile should be "colors[0]" and the 2 tiles adjacent to it
 // should have the color "colors[1]".
@@ -12,7 +13,10 @@ uniform int size = 32;
 uniform vec3 colors[2];
 
 void main(){
-    //x 0:31=0 32:63=1 64:95=0
-    // //y 0:31=0 32:63=1 64:95=0
-    frag_color = vec4(colors[0], 1.0);
+
+    vec2 Pos = floor(vec2(gl_FragCoord) / size);
+    float PatternMask = mod(Pos.x + mod(Pos.y, 2.0), 2.0);
+    vec4 col1 = vec4(colors[1], 1.0);
+    vec4 col2 = vec4(colors[0], 1.0);
+    frag_color = (bool(PatternMask)) ? col1 : col2;
 }

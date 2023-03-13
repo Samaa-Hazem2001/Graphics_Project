@@ -30,6 +30,5 @@ void main(){
     frag_color.g = dot(green,vec4(fs_in.color,1.0));
     frag_color.b = dot(blue,vec4(fs_in.color,1.0));
     frag_color=vec4(frag_color.r,frag_color.g,frag_color.b,1.0);
-    // frag_color= vec4(fs_in.color,1.0);
 
 }
