@@ -42,34 +42,32 @@ namespace our {
         // For example, if faceCulling.enabled is true, you should call glEnable(GL_CULL_FACE), otherwise, you should call glDisable(GL_CULL_FACE)
         void setup() const {
             //TODO: (Req 4) Write this function
-            glColorMask(colorMask[0], colorMask[1],colorMask[2],colorMask[3]);
-            
-             if(faceCulling.enabled == true) {
+            if (this->faceCulling.enabled) {
                 glEnable(GL_CULL_FACE);
-                glCullFace(faceCulling.culledFace);
-                glFrontFace(faceCulling.frontFace);
+                glCullFace(this->faceCulling.culledFace);
+                glFrontFace(this->faceCulling.frontFace);
             } else {
                 glDisable(GL_CULL_FACE);
             }
-            
-             if(depthTesting.enabled == true) {
+
+            if (this->depthTesting.enabled) {
                 glEnable(GL_DEPTH_TEST);
-                glDepthFunc(depthTesting.function);
-                glDepthMask(depthMask);
-                
+                glDepthFunc(this->depthTesting.function);
             } else {
-                glDisable(GL_DEPTH_TEST);   
+                glDisable(GL_DEPTH_TEST);
             }
 
-             if(blending.enabled == true) {
+            if (this->blending.enabled) {
                 glEnable(GL_BLEND);
-                glBlendEquation(blending.equation);
-                glBlendFunc(blending.sourceFactor, blending.destinationFactor); 
-                glBlendColor(blending.constantColor[0],blending.constantColor[1],blending.constantColor[2],blending.constantColor[3]);
-                
+                glBlendEquation(this->blending.equation);
+                glBlendFunc(this->blending.sourceFactor, this->blending.destinationFactor);
+                glBlendColor(this->blending.constantColor.r, this->blending.constantColor.g, this->blending.constantColor.b, this->blending.constantColor.a);
             } else {
                 glDisable(GL_BLEND);
             }
+
+            glColorMask(colorMask.r, colorMask.g, colorMask.b, colorMask.a);
+            glDepthMask(depthMask);
 
 
         }
