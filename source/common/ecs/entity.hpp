@@ -101,7 +101,7 @@ namespace our {
             for(it = components.begin(); it != components.end(); it++){
                 if(component == *it)
                     delete *it;
-                    components.erase(component);
+                    components.erase(it);
             }
         }
 
@@ -111,8 +111,8 @@ namespace our {
             std::list<Component*>::iterator it;
             for(it = components.begin(); it != components.end(); it++){
                 delete *it;
-                components.erase(it);
             }
+            components.clear();
         }
 
         // Entities should not be copyable
