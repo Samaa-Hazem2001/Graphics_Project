@@ -42,32 +42,76 @@ namespace our {
         // For example, if faceCulling.enabled is true, you should call glEnable(GL_CULL_FACE), otherwise, you should call glDisable(GL_CULL_FACE)
         void setup() const {
             //TODO: (Req 4) Write this function
+        // documentation : norhan  
+        /*
+OpenGL is a state machine where the options we pick are stored in the OpenGL context and affect the
+upcoming draw calls. Since each object may require different options while drawing (e.g. transparent objectsrequire blending while Opaque objects don't), we would need to store the options for each object in a data
+structure and set the OpenGL options to match the given options before drawing.
+This is where we use the "PipelineState" structure which we will use to store the depth testing, face culling,
+blending and color/depth mask options. The setup function of the PipelineState sets the OpenGL options to
+match the ones stored in the corresponding PipelineState instance.
+        */
+
+       /* */
             if (this->faceCulling.enabled) {
-                glEnable(GL_CULL_FACE);
-                glCullFace(this->faceCulling.culledFace);
-                glFrontFace(this->faceCulling.frontFace);
+                glEnable(GL_CULL_FACE); //enable face culling
+                glCullFace(this->faceCulling.culledFace);//remove the back face which is cw
+                glFrontFace(this->faceCulling.frontFace);//define  the front face is  GL_CCW : counter clock wise 132 
+                /*
+                counter clock wise is front 
+                      /3\
+                     /   \    
+                    /     \
+                   1-------2
+
+                    rotate around x and y  change the front and back faces
+                    rotate around Z things keeps as it % 
+                */
+
             } else {
-                glDisable(GL_CULL_FACE);
+                glDisable(GL_CULL_FACE); //disable face culling
             }
+
+
 
             if (this->depthTesting.enabled) {
-                glEnable(GL_DEPTH_TEST);
-                glDepthFunc(this->depthTesting.function);
+                 //depth buffer: store a depth value for each pixel (sample in case MSAA)
+                /* somtimes a problem of z fiting occurs so to solve it is to increase the precision of depth testing or depth 
+                buffer by increasing the number of bits 
+                or decrease the distance between near and far 
+                so ir will have higher precision */ 
+                glEnable(GL_DEPTH_TEST);//enable depth testing
+                glDepthFunc(this->depthTesting.function); //define the function that is GL_LEQUAL which means that take the nearst value
+
+              
             } else {
-                glDisable(GL_DEPTH_TEST);
+                glDisable(GL_DEPTH_TEST);//disable test depth
             }
+
+
 
             if (this->blending.enabled) {
-                glEnable(GL_BLEND);
-                glBlendEquation(this->blending.equation);
-                glBlendFunc(this->blending.sourceFactor, this->blending.destinationFactor);
-                glBlendColor(this->blending.constantColor.r, this->blending.constantColor.g, this->blending.constantColor.b, this->blending.constantColor.a);
+                /*
+                blending perform addition between source(thing that yoy are drawing) and destination(screen)
+
+                (source.aplpha) * source  + (1-source.aplpha) * destination 
+
+                   C = ∝s *Cs   +   (1 - ∝s)* CD
+
+                    Sort from Farthest to Nearest.
+                     Draw Opaque Objects first 
+                */
+                glEnable(GL_BLEND); //enable blending
+                glBlendEquation(this->blending.equation); // GL_FUNC_ADD 
+                glBlendFunc(this->blending.sourceFactor, this->blending.destinationFactor);//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+                glBlendColor(this->blending.constantColor.r, this->blending.constantColor.g, this->blending.constantColor.b, this->blending.constantColor.a);//The GL_BLEND_COLOR may be used to calculate the source and destination blending factors. The color components are clamped to the range [0,1]
+ before being stored.
             } else {
-                glDisable(GL_BLEND);
+                glDisable(GL_BLEND); //disable blending
             }
 
-            glColorMask(colorMask.r, colorMask.g, colorMask.b, colorMask.a);
-            glDepthMask(depthMask);
+            glColorMask(colorMask.r, colorMask.g, colorMask.b, colorMask.a);//specify whether the individual color components in the frame buffer can or cannot be written.
+            glDepthMask(depthMask);//glDepthMask specifies whether the depth buffer is enabled for writing.
 
 
         }
