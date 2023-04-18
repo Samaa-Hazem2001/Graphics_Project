@@ -104,8 +104,7 @@ match the ones stored in the corresponding PipelineState instance.
                 glEnable(GL_BLEND); //enable blending
                 glBlendEquation(this->blending.equation); // GL_FUNC_ADD 
                 glBlendFunc(this->blending.sourceFactor, this->blending.destinationFactor);//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-                glBlendColor(this->blending.constantColor.r, this->blending.constantColor.g, this->blending.constantColor.b, this->blending.constantColor.a);//The GL_BLEND_COLOR may be used to calculate the source and destination blending factors. The color components are clamped to the range [0,1]
- before being stored.
+                glBlendColor(this->blending.constantColor.r, this->blending.constantColor.g, this->blending.constantColor.b, this->blending.constantColor.a);//The GL_BLEND_COLOR may be used to calculate the source and destination blending factors. The color components are clamped to the range [0,1]before being stored.
             } else {
                 glDisable(GL_BLEND); //disable blending
             }
