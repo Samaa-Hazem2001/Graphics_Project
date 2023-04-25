@@ -53,24 +53,28 @@ namespace our {
         // Then we check if there is a postprocessing shader in the configuration
         if(config.contains("postprocess")){
             //TODO: (Req 11) Create a framebuffer
+            /*
+            here we are performing the post process here we are drawing on the texture it self it is something like making 
+            
+            */
            
-              glGenFramebuffers(1, &postprocessFrameBuffer);
-              glBindFramebuffer(GL_DRAW_FRAMEBUFFER, postprocessFrameBuffer);
+              glGenFramebuffers(1, &postprocessFrameBuffer); // Create a framebuffer
+              glBindFramebuffer(GL_DRAW_FRAMEBUFFER, postprocessFrameBuffer); // bind a framebuffer(texture that we will draw on ,buffer)
             //TODO: (Req 11) Create a color and a depth texture and attach them to the framebuffer
             // Hints: The color format can be (Red, Green, Blue and Alpha components with 8 bits for each channel).
             // The depth format can be (Depth component with 24 bits).
-             colorTarget = texture_utils::empty(GL_RGBA8, windowSize);
+             colorTarget = texture_utils::empty(GL_RGBA8, windowSize);//color
 
-            depthTarget = texture_utils::empty(GL_DEPTH_COMPONENT24, windowSize);
+            depthTarget = texture_utils::empty(GL_DEPTH_COMPONENT24, windowSize);//depth texture
 
-            glFramebufferTexture2D(GL_DRAW_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depthTarget->getOpenGLName(), 0);
+            glFramebufferTexture2D(GL_DRAW_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depthTarget->getOpenGLName(), 0);//attach depth
 
-            glFramebufferTexture2D(GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, colorTarget->getOpenGLName(), 0);
+            glFramebufferTexture2D(GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, colorTarget->getOpenGLName(), 0);//attach color
             
             //TODO: (Req 11) Unbind the framebuffer just to be safe
-            glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
+            glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0); // unbind the frame buffer 
             // Create a vertex array to use for drawing the texture
-            glGenVertexArrays(1, &postProcessVertexArray);
+            glGenVertexArrays(1, &postProcessVertexArray);//postProcessVertexArray vertex array 
 
             // Create a sampler to use for sampling the scene texture in the post processing shader
             Sampler* postprocessSampler = new Sampler();
