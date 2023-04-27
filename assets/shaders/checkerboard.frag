@@ -11,7 +11,7 @@ out vec4 frag_color;
 
 uniform int size = 32;
 uniform vec3 colors[2];
-
+ 
 void main(){
     /*
     
