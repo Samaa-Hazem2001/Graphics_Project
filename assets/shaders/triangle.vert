@@ -33,7 +33,10 @@ void main(){
         vec3(0.0,1.0,0.0),
         vec3(0.0,0.0,1.0)
     );
-
+     // get the position by index of vertex 
+     //vertex "v" should be transformed to be "scale * v + translation".
+     // the default for scale is 1 so I pad it with 1 and and translation is 0 so I pad it with 0
     gl_Position = vec4(vec3(scale,1.0)*position[gl_VertexID]+vec3(translation,0.0) ,1.0);
+    // get the color by index of vertex 
     vs_out.color = colors[gl_VertexID];
 }

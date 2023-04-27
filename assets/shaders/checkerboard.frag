@@ -13,10 +13,14 @@ uniform int size = 32;
 uniform vec3 colors[2];
 
 void main(){
+    /*
+    
+    
+    */
 
-    vec2 Pos = floor(vec2(gl_FragCoord) / size);
-    float PatternMask = mod(Pos.x + mod(Pos.y, 2.0), 2.0);
-    vec4 col1 = vec4(colors[1], 1.0);
-    vec4 col2 = vec4(colors[0], 1.0);
-    frag_color = (bool(PatternMask)) ? col1 : col2;
+    vec2 Pos = floor(vec2(gl_FragCoord) / size);//get the position 
+    float PatternMask = mod(Pos.x + mod(Pos.y, 2.0), 2.0);// get the pattern mask from the position 
+    vec4 col1 = vec4(colors[1], 1.0);//first color
+    vec4 col2 = vec4(colors[0], 1.0);//second color
+    frag_color = (bool(PatternMask)) ? col1 : col2;//choose the current color depending on the pattern mask
 }
