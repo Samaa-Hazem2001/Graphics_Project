@@ -32,6 +32,7 @@ namespace our {
             // remember to store the number of elements in "elementCount" since you will need it for drawing
             // For the attribute locations, use the constants defined above: ATTRIB_LOC_POSITION, ATTRIB_LOC_COLOR, etc
             
+            
             // vertex_array 
             glGenVertexArrays(1, &VAO);
             glBindVertexArray(VAO);
