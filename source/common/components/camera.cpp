@@ -35,6 +35,14 @@ namespace our {
         // - the center position which is the point (0,0,-1) but after being transformed by M
         // - the up direction which is the vector (0,1,0) but after being transformed by M
         // then you can use glm::lookAt
+
+
+        // The lookAt() function takes three parameters: the camera's position, the position
+        //  that the camera is looking at, and the up vector that defines the orientation of the camera.
+        
+        // eye is camera position, the last vector represents a position not a direction.
+        // center position camera is looking at, the last vector represents a position not a direction.
+        // upDirection is turn up vector, the last vector represents a direction and not a position, so it's 0
         glm::vec4 eye = glm::vec4(0, 0, 0, 1);
         glm::vec4 center = glm::vec4(0, 0, -1, 1);
         glm::vec4 upDirection = glm::vec4(0, 1, 0, 0);
@@ -53,15 +61,25 @@ namespace our {
         // It takes left, right, bottom, top. Bottom is -orthoHeight/2 and Top is orthoHeight/2.
         // Left and Right are the same but after being multiplied by the aspect ratio
         // For the perspective camera, you can use glm::perspective
+        
+        //aspect ratio (width ÷ height of the window)
         float aspectRatio = float(viewportSize.x) / float(viewportSize.y);
 
+        // Left is  (-orthoHeight / 2) * aspectRatio.
         float Left = (-orthoHeight / 2) * aspectRatio;
+        // Left is  (orthoHeight / 2) * aspectRatio.
         float Right = (orthoHeight / 2) * aspectRatio;
+        // Bottom is -orthoHeight/2.
         float Bottom = -orthoHeight / 2;
+        // Top is orthoHeight/2.
         float Top = orthoHeight / 2;
 
+        // Defining an Orthographic Projection
         if (cameraType == CameraType::ORTHOGRAPHIC){
-             glm::mat4 orthographic = glm::ortho(
+            // The ortho() function typically takes four parameters: left, right, bottom, top.
+            // The ortho() function uses these parameters to create a 4x4 projection matrix that 
+            // can be used to transform the coordinates of the 3D objects into 2D coordinates on the screen.
+            glm::mat4 orthographic = glm::ortho(
             Left,
             Right,
             Bottom,
@@ -70,12 +88,20 @@ namespace our {
             return orthographic;
 
         }
+        // Defining a Perspective Projection
         else
         {
+            // The perspective() function typically takes four parameters: fovy, aspect, near, far.
+            // The perspective() function uses these parameters to create a 4x4 projection matrix that
+            // can be used to transform the coordinates of the 3D objects into 2D coordinates on the screen, with the appropriate perspective distortion.
             glm::mat4 projection = glm::perspective(
+                // The vertical field of view angle (smaller means more zoom in)
                 fovY,
+                //aspect ratio (width ÷ height of the window)
                 aspectRatio,
+                //near plane relative to camera
                 near,
+                // far plane relative to camera
                 far);
             return  projection;
         }

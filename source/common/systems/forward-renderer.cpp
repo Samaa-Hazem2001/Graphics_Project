@@ -225,18 +225,25 @@ Parameters
             //TODO: (Req 9) Finish this function
             // HINT: the following return should return true "first" should be drawn before "second". 
             // dot returns the dot product of two vectors
-            if (glm::dot(cameraForward,first.center) > glm::dot(cameraForward,second.center)  )
-                return true;
-            else
-                return false;
+            // if (glm::dot(cameraForward,first.center) > glm::dot(cameraForward,second.center)  )
+            //     return true;
+            // else
+            //     return false;
+
+            // if the center of the first is far than the second it have to drwa at the first
+            return (glm::dot(cameraForward,first.center) > glm::dot(cameraForward,second.center)  );
         });
 
         //TODO: (Req 9) Get the camera ViewProjection matrix and store it in VP
+        //we use the define functions in "camera", sending the windowSize to calculate the aspect ratio 
         glm::mat4 P = camera->getProjectionMatrix(windowSize);
         glm::mat4 V = camera->getViewMatrix();
         glm::mat4 VP =  P*V ;
 
         //TODO: (Req 9) Set the OpenGL viewport using viewportStart and viewportSize
+        //Specify the lower left corner of the viewport rectangle, in pixels , we set it to be (0,0)
+        //then the width in my current width of the "windowSize" (windowSize.x)
+        //same thing for y
         glViewport(0, 0, windowSize.x, windowSize.y);
 
         //TODO: (Req 9) Set the clear color to black and the clear depth to 1
@@ -263,6 +270,8 @@ Parameters
         for (auto command : opaqueCommands)
         {
             command.material->setup();
+            //set the "transform" uniform to be equal the model-view-projection matrix for each render command 
+            // by changing model matrix by the current model for this command
             command.material->shader->set("transform", VP * command.localToWorld);
             command.mesh->draw();
         }
@@ -300,6 +309,7 @@ Parameters
         for (auto command : transparentCommands)
         {
             command.material->setup();
+            //same concept as opaqueCommands loop
             command.material->shader->set("transform", VP * command.localToWorld);
             command.mesh->draw();
         }

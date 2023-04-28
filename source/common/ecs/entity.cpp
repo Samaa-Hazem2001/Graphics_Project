@@ -10,10 +10,14 @@ namespace our {
     // Remember that you can get the transformation matrix from this entity to its parent from "localTransform"
     // To get the local to world matrix, you need to combine this entities matrix with its parent's matrix and
     // its parent's parent's matrix and so on till you reach the root.
+    
+    // The getLocalToWorldMatrix function is used to calculate the transformation
+    // matrix that converts local coordinates of a 3D object to world coordinates.
     glm::mat4 Entity::getLocalToWorldMatrix() const {
         //TODO: (Req 8) Write this function
        glm::mat4 localToWorld=this->localTransform.toMat4();
        Entity * parentPtr= this->parent;
+        // make while loop to all elements till you reach the root   
         while(parentPtr!=nullptr){
             localToWorld=  parentPtr->localTransform.toMat4()*localToWorld ;
             parentPtr=parentPtr->parent;

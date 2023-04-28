@@ -20,6 +20,8 @@ namespace our {
             component = entity->addComponent<FreeCameraControllerComponent>();
         } else if (type == MovementComponent::getID()) {
             component = entity->addComponent<MovementComponent>();
+            // hecking whether a given variable "type" is equal to the ID of a MeshRendererComponent, 
+            // and if so, creating a new instance of the component and assigning it to the variable "component" of the entity.
         } else if (type == MeshRendererComponent::getID()) {
             component = entity->addComponent<MeshRendererComponent>();
         }
