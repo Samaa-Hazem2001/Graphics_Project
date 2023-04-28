@@ -58,12 +58,13 @@ namespace our {
         void deleteMarkedEntities(){
             //TODO: (Req 8) Remove and delete all the entities that have been marked for removal
             
-            // for loop to all entities in markedForRemoval, and then delete them
-            // then clear all markedForRemoval entities.
+            // for loop to all entities in markedForRemoval
             for(auto entity: markedForRemoval){
+                // erase it from entities and delete it 
                 entities.erase(entity);
                 delete entity;
             }
+            // clear all markedForRemoval entities.
             markedForRemoval.clear();
         }
 
@@ -71,12 +72,15 @@ namespace our {
         void clear(){
             //TODO: (Req 8) Delete all the entites and make sure that the containers are empty
             
-            // for loop to all entities, and then delete them
+            // for loop to all entities, and then 
             // then clear all entites and markedForRemoval entities.
             for(auto entity: entities){
+                // delete the entity
                 delete entity;
             }
+            // clear all entites
             entities.clear();
+            // clear all markedForRemoval entities.
             markedForRemoval.clear();
         }
 

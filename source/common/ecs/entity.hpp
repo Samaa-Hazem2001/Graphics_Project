@@ -36,10 +36,13 @@ namespace our {
             //TODO: (Req 8) Create an component of type T, set its "owner" to be this entity, then push it into the component's list
             // Don't forget to return a pointer to the new component
 
-            // Create component and add it to the components, then return it.
+            // Create component
             T* component = new T();
+            // set its "owner" to be this entity
             component->owner = this;
+            // add it to the components
             this->components.push_back(component);
+            // return it.
             return component;
         }
 
@@ -53,11 +56,15 @@ namespace our {
             // for loop to all components, and then find the first component that can be dynamically cast to "T*"
             // then return it, if not found return null.
             std::list<Component*>::iterator it;
+            // for loop to all components
             for(it = components.begin(); it != components.end(); it++){
+                // try to find the first component that can be dynamically cast to "T*"
                 T* t = dynamic_cast<T*>(*it);
+                // if found return it
                 if(t)
                     return t;
             }
+            // if not found return null.
             return nullptr;
         }
 
@@ -81,8 +88,11 @@ namespace our {
             // for loop to all components, and then find the first component that can be dynamically cast to "T*"
             // then delete it and erase it from components and return from the function.
             std::list<Component*>::iterator it;
+            // for loop to all components
             for(it = components.begin(); it != components.end(); it++){
+                // try to find the first component that can be dynamically cast to "T*"
                 T* t = dynamic_cast<T*>(*it);
+                // if found delete it and erase it from components
                 if(t)
                     delete *it;
                     components.erase(it);
@@ -109,7 +119,10 @@ namespace our {
             // for loop to all components, and then find given component "component"
             // then delete it and erase it from components and return from the function.
             std::list<Component*>::iterator it;
+            // for loop to all components
             for(it = components.begin(); it != components.end(); it++){
+                // try to find given component "component"
+                // if found delete it and erase it from components
                 if(component == *it)
                     delete *it;
                     components.erase(it);
@@ -123,9 +136,12 @@ namespace our {
             // for loop to all components, and then delete them
             // then clear all components
             std::list<Component*>::iterator it;
+            // for loop to all components
             for(it = components.begin(); it != components.end(); it++){
+                // delete each pointer
                 delete *it;
             }
+            // clear all components
             components.clear();
         }
 

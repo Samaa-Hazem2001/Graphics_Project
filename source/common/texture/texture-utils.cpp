@@ -14,18 +14,9 @@ our::Texture2D* our::texture_utils::empty(GLenum format, glm::ivec2 size){
     our::Texture2D* texture = new our::Texture2D();
 
     //TODO: (Req 11) Finish this function to create an empty texture with the given size and format
+
     //Bind this texture that we will use
     texture->bind();
-
-    //Specify texture parameters and data
-    //glTexImage2D(target/type,level,internalformat,width,height,border must be 0,format,type,data)
-    //level is 0 -> base image 
-    //data is NULL -> empty texture
-    // if(format == GL_RGBA8) {
-    //     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, size[0], size[1], 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
-    // } else if(format == GL_DEPTH_COMPONENT24){
-    //     glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT24, size[0], size[1], 0, GL_DEPTH_COMPONENT, GL_UNSIGNED_BYTE, NULL);
-    // }
     
     //Specify texture parameters without storing data in texture just allocate memory for it
     //for depth buffer we need only 1 mip level
@@ -34,7 +25,14 @@ our::Texture2D* our::texture_utils::empty(GLenum format, glm::ivec2 size){
     if(format != GL_DEPTH_COMPONENT24){
         levels = (GLsizei)glm::floor(glm::log2((float)glm::max(size[0], size[1]))) + 1;
     }
-    //glTexStorage2D(target/type,mip levels,internalformat,width,height)
+
+    //glTexStorage2D(target,mip levels,internalformat,width,height)
+    /*here we chose the texture target or type to be 2D array of pixels
+    levels is the number of mipmap levels to be generated
+    internalformat is the sized internal format of the texture data
+    like RGBA8 (means each pixel color is 4 channel and each channel is 8 bits)
+    width and height are image size in pixels
+    */
     glTexStorage2D(GL_TEXTURE_2D, levels, format, size[0], size[1]);
 
     return texture;
@@ -64,10 +62,24 @@ our::Texture2D* our::texture_utils::loadImage(const std::string& filename, bool 
 
     //Bind the texture such that we upload the image data to its storage
     //TODO: (Req 5) Finish this function to fill the texture with the data found in "pixels"
+
+    //Bind this texture that we will use
     texture->bind();
+
+    //Specify texture parameters and data
+    //glTexImage2D(target,level,internalformat,width,height,border must be 0,format,type,data)
+    /*here we chose the texture target or type to be 2D array of pixels
+    level: the level of specified number. Level 0 is the base image level.
+    internalformat: thenumber of color components in the texture. 
+    format: the format of the pixel data.
+    width and height are image size in pixels
+    type: the data type of the pixel data.
+    data: pointer to data stored in texture
+    */
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, size.x, size.y, 0, GL_RGBA, GL_UNSIGNED_BYTE, (void*)pixels);
     
     if(generate_mipmap){
+        //glGenerateMipmap(target/type)
         glGenerateMipmap(GL_TEXTURE_2D);
     }
     
