@@ -14,7 +14,32 @@ uniform vec3 colors[2];
  
 void main(){
     /*
-    
+
+    pattern mask 
+    example if we have 
+
+       
+     -----------------------
+     -          -          -
+     -   white  -   black  -
+     -          -          -
+     -----------------------
+     -          -          -
+     -   black  - white    -
+     -          -          -             
+     -----------------------
+
+        even + even 0 => even 0
+        even + odd 1 => odd 1
+        odd + even 0 => odd 1
+        odd + odd 1 => even 0
+
+        0 color[0]
+        1 color[1]
+
+
+        color[0] black
+        color[1] white
     
     */
 
