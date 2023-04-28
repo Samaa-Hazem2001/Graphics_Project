@@ -26,9 +26,14 @@ namespace our {
         Entity* add() {
             //TODO: (Req 8) Create a new entity, set its world member variable to this,
             // and don't forget to insert it in the suitable container.
+            
+            // Create a new entity
             Entity* entity = new Entity();
+            // set its world member variable to this
             entity->world = this;
+            // insert it in the container of entities
             entities.insert(entity);
+            // return it
             return entity;
         }
 
@@ -41,7 +46,10 @@ namespace our {
         // The elements in the "markedForRemoval" set will be removed and deleted when "deleteMarkedEntities" is called.
         void markForRemoval(Entity* entity){
             //TODO: (Req 8) If the entity is in this world, add it to the "markedForRemoval" set.
+            
+            // check if the entity found in entities.
             if(entities.find(entity) != entities.end())
+                // insert it to markedForRemoval
                 markedForRemoval.insert(entity);
         }
 
@@ -49,6 +57,9 @@ namespace our {
         // Then each of these elements are deleted.
         void deleteMarkedEntities(){
             //TODO: (Req 8) Remove and delete all the entities that have been marked for removal
+            
+            // for loop to all entities in markedForRemoval, and then delete them
+            // then clear all markedForRemoval entities.
             for(auto entity: markedForRemoval){
                 entities.erase(entity);
                 delete entity;
@@ -59,6 +70,9 @@ namespace our {
         //This deletes all entities in the world
         void clear(){
             //TODO: (Req 8) Delete all the entites and make sure that the containers are empty
+            
+            // for loop to all entities, and then delete them
+            // then clear all entites and markedForRemoval entities.
             for(auto entity: entities){
                 delete entity;
             }
