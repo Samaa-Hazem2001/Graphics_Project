@@ -54,8 +54,32 @@ namespace our {
         if(config.contains("postprocess")){
             //TODO: (Req 11) Create a framebuffer
             /*
-            here we are performing the post process here we are drawing on the texture it self it is something like making 
-            
+            here we are performing the post process here we are drawing on the texture it self it is something like making mirror :)
+            ///////////////////////////////////////////////////////////////////////
+            Name
+              glGenFramebuffers — generate framebuffer object names
+
+           C Specification
+            void glGenFramebuffers(	GLsizei n,
+                GLuint *ids);
+ 
+           Parameters
+            1-n : Specifies the number of framebuffer object names to generate.
+
+            2-ids : Specifies an array in which the generated framebuffer object names are stored.
+
+            /////////////////////////////////////////////////////////////////////////////////////
+            Name
+              glBindFramebuffer — bind a framebuffer to a framebuffer target
+
+            C Specification
+                void glBindFramebuffer(	GLenum target,
+                    GLuint framebuffer);
+                
+            Parameters
+                1-target : Specifies the framebuffer target of the binding operation.
+
+                2-framebuffer : Specifies the name of the framebuffer object to bind.
             */
            
               glGenFramebuffers(1, &postprocessFrameBuffer); // Create a framebuffer
@@ -63,17 +87,57 @@ namespace our {
             //TODO: (Req 11) Create a color and a depth texture and attach them to the framebuffer
             // Hints: The color format can be (Red, Green, Blue and Alpha components with 8 bits for each channel).
             // The depth format can be (Depth component with 24 bits).
-             colorTarget = texture_utils::empty(GL_RGBA8, windowSize);//color
+             colorTarget = texture_utils::empty(GL_RGBA8, windowSize);//color 
 
             depthTarget = texture_utils::empty(GL_DEPTH_COMPONENT24, windowSize);//depth texture
+
+            /*
+Name
+     glFramebufferTexture2D — attach a texture image to a framebuffer object
+
+C Specification
+    void glFramebufferTexture2D(	GLenum target,
+        GLenum attachment,
+        GLenum textarget,
+        GLuint texture,
+        GLint level);
+ 
+Parameters
+        1-target : Specifies the framebuffer target. The symbolic constant must be GL_FRAMEBUFFER.
+
+        2-attachment : Specifies the attachment point to which an image from texture should be attached. Must be one of the following symbolic constants: GL_COLOR_ATTACHMENT0, GL_DEPTH_ATTACHMENT, or GL_STENCIL_ATTACHMENT.
+
+        3-textarget : Specifies the texture target. Must be one of the following symbolic constants: GL_TEXTURE_2D, GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, or GL_TEXTURE_CUBE_MAP_NEGATIVE_Z.
+
+        4-texture : Specifies the texture object whose image is to be attached.
+
+        5-level : Specifies the mipmap level of the texture image to be attached, which must be 0.
+            
+            */
 
             glFramebufferTexture2D(GL_DRAW_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depthTarget->getOpenGLName(), 0);//attach depth
 
             glFramebufferTexture2D(GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, colorTarget->getOpenGLName(), 0);//attach color
             
             //TODO: (Req 11) Unbind the framebuffer just to be safe
+            // pass to it zero to unvind the buffer
             glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0); // unbind the frame buffer 
             // Create a vertex array to use for drawing the texture
+            /*
+            
+         Name
+             glGenVertexArrays — generate vertex array object names
+
+         C Specification
+            void glGenVertexArrays(	GLsizei n,
+                GLuint *arrays);
+ 
+         Parameters
+            1-n : Specifies the number of vertex array object names to generate.
+
+            2-arrays : Specifies an array in which the generated vertex array object names are stored.
+            
+            */
             glGenVertexArrays(1, &postProcessVertexArray);//postProcessVertexArray vertex array 
 
             // Create a sampler to use for sampling the scene texture in the post processing shader
@@ -267,6 +331,22 @@ namespace our {
             //TODO: (Req 11) Setup the postprocess material and draw the fullscreen triangle
             postprocessMaterial->setup();
             glBindVertexArray(this->postProcessVertexArray);
+            /*
+Name
+  glDrawArrays — render primitives from array data
+
+C Specification
+    void glDrawArrays(	GLenum mode,
+        GLint first,
+        GLsizei count);
+ 
+Parameters
+        1-mode : Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY and GL_PATCHES are accepted.
+
+        2-first : Specifies the starting index in the enabled arrays.
+
+        3-count : Specifies the number of indices to be rendered.
+            */
             glDrawArrays(GL_TRIANGLES, 0, 3);
             
         }
