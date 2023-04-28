@@ -219,6 +219,7 @@ namespace our {
             this->skyMaterial->setup();
 
             //TODO: (Req 10) Get the camera position
+            // we already have got it above in variable called eye
             glm::vec3 camPosition = eye;
 
             //TODO: (Req 10) Create a model matrix for the sy such that it always follows the camera (sky sphere center = camera position)
@@ -229,12 +230,21 @@ namespace our {
             //TODO: (Req 10) We want the sky to be drawn behind everything (in NDC space, z=1)
             // We can acheive the is by multiplying by an extra matrix after the projection but what values should we put in it?
             glm::mat4 alwaysBehindTransform = glm::mat4(
-                1.0f, 0.0f, 0.0f, 0.0f,
+                // row 1
+                1.0f, 0.0f, 0.0f, 0.0f, // column 1
                 0.0f, 1.0f, 0.0f, 0.0f,
                 0.0f, 0.0f, 0.0f, 0.0f,
                 0.0f, 0.0f, 1.0f, 1.0f
             );
+           //col1
+    //row1  // 1   0   0   0   x        x     x/w
+            // 0   1   0   0   y        y     y/w
+            // 0   0   0   1   z    =   w  =   1     <= z=1 
+            // 0   0   0   1   w        w      1
+
             //TODO: (Req 10) set the "transform" uniform
+            //we use alwaysBehindTransform above to ensure that the sky is behind everything  (have the largest normalized depth)
+            //we multiply it at the last stage after multiplying it with V & P & M
             skyMaterial->shader->set("transform", alwaysBehindTransform * VP * skyModel);
 
             //TODO: (Req 10) draw the sky sphere
