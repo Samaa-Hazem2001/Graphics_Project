@@ -14,7 +14,7 @@ our::Texture2D* our::texture_utils::empty(GLenum format, glm::ivec2 size){
     our::Texture2D* texture = new our::Texture2D();
 
     //TODO: (Req 11) Finish this function to create an empty texture with the given size and format
-    //Bind this texture
+    //Bind this texture that we will use
     texture->bind();
 
     //Specify texture parameters and data
