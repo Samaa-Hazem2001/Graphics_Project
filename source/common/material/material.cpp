@@ -46,12 +46,15 @@ namespace our {
         TintedMaterial::setup();
         shader->set("alphaThreshold",alphaThreshold);
         
+        // check if texture and sampler exists
+        // to avoid problems if textured material is used without a texture
         if(texture != NULL && sampler !=NULL){
             glActiveTexture(GL_TEXTURE0); //we send it unit 0 
             texture->bind();
             sampler->bind(0);
+            shader->set("tex",0);
         }
-        shader->set("tex",0);
+        
     }
 
     // This function read the material data from a json object

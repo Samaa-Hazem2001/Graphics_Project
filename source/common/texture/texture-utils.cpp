@@ -16,16 +16,6 @@ our::Texture2D* our::texture_utils::empty(GLenum format, glm::ivec2 size){
     //TODO: (Req 11) Finish this function to create an empty texture with the given size and format
     //Bind this texture that we will use
     texture->bind();
-
-    //Specify texture parameters and data
-    //glTexImage2D(target/type,level,internalformat,width,height,border must be 0,format,type,data)
-    //level is 0 -> base image 
-    //data is NULL -> empty texture
-    // if(format == GL_RGBA8) {
-    //     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, size[0], size[1], 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
-    // } else if(format == GL_DEPTH_COMPONENT24){
-    //     glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT24, size[0], size[1], 0, GL_DEPTH_COMPONENT, GL_UNSIGNED_BYTE, NULL);
-    // }
     
     //Specify texture parameters without storing data in texture just allocate memory for it
     //for depth buffer we need only 1 mip level
@@ -65,9 +55,12 @@ our::Texture2D* our::texture_utils::loadImage(const std::string& filename, bool 
     //Bind the texture such that we upload the image data to its storage
     //TODO: (Req 5) Finish this function to fill the texture with the data found in "pixels"
     texture->bind();
+    //Specify texture parameters and data
+    //glTexImage2D(target/type,level,internalformat,width,height,border must be 0,format,type,data)
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, size.x, size.y, 0, GL_RGBA, GL_UNSIGNED_BYTE, (void*)pixels);
     
     if(generate_mipmap){
+        //glGenerateMipmap(target/type)
         glGenerateMipmap(GL_TEXTURE_2D);
     }
     
