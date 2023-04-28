@@ -42,14 +42,14 @@ namespace our {
         // For example, if faceCulling.enabled is true, you should call glEnable(GL_CULL_FACE), otherwise, you should call glDisable(GL_CULL_FACE)
         void setup() const {
             //TODO: (Req 4) Write this function
-        // documentation   
+        
         /*
-OpenGL is a state machine where the options we pick are stored in the OpenGL context and affect the
-upcoming draw calls. Since each object may require different options while drawing (e.g. transparent objectsrequire blending while Opaque objects don't), we would need to store the options for each object in a data
-structure and set the OpenGL options to match the given options before drawing.
-This is where we use the "PipelineState" structure which we will use to store the depth testing, face culling,
-blending and color/depth mask options. The setup function of the PipelineState sets the OpenGL options to
-match the ones stored in the corresponding PipelineState instance.
+        OpenGL is a state machine where the options we pick are stored in the OpenGL context and affect the
+        upcoming draw calls. Since each object may require different options while drawing (e.g. transparent objectsrequire blending while Opaque objects don't), we would need to store the options for each object in a data
+        structure and set the OpenGL options to match the given options before drawing.
+        This is where we use the "PipelineState" structure which we will use to store the depth testing, face culling,
+        blending and color/depth mask options. The setup function of the PipelineState sets the OpenGL options to
+        match the ones stored in the corresponding PipelineState instance.
         */
 
        /* 
