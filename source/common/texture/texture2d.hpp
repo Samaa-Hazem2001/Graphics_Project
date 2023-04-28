@@ -20,7 +20,7 @@ namespace our {
         // This deconstructor deletes the underlying OpenGL texture
         ~Texture2D() { 
             //TODO: (Req 5) Complete this function
-            //Delete texture which is a 2D array image 
+            //Delete texture from memory 
             //glDeleteTextures(number of textures to be deleted, pointer to texture array)
             glDeleteTextures(1, &name);
         }
