@@ -12,7 +12,7 @@ namespace our {
         // This constructor creates an OpenGL texture and saves its object name in the member variable "name" 
         Texture2D() {
             //TODO: (Req 5) Complete this function
-            //Generate texture which is a 2D array image of pixels
+            //Generate texture which is a array of pixels forms an image
             //glGenTextures(number of textures to be generated, pointer to texture array)
             glGenTextures(1, &name);
         };

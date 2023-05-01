@@ -55,26 +55,47 @@ namespace our {
         
             // void glVertexAttribPointer(	
             //     GLuint index,
-            //     GLint size,
-            //     GLenum type,
-            //     GLboolean normalized,
-            //     GLsizei stride,
-            //     const void * pointer);
+            //     GLint size, <= The number of components per attribute
+            //     GLenum type, <=The data type of each component of the color vector
+            //     GLboolean normalized, <=Whether the data should be normalized before being passed to the shader program or not
+            //     GLsizei stride, <=Specifies the byte offset between consecutive generic vertex attributes(This tells OpenGL how much memory to skip to get to the next vertex's normal data)
+            //     const void * pointer <= The offset in bytes from the start of each vertex to the specific attribute
+            // );
 
             // position_loc  
             glEnableVertexAttribArray(ATTRIB_LOC_POSITION);
+            //ATTRIB_LOC_POSITION: is the location of the position attribute in the shader program
+            //3: the position is represented as a 3-component vector (xyz)
+            //false: means that the data should not be normalized before it is used#pragma endregion
+            //sizeof(Vertex) specifies the size of each vertex in bytes
+            //last parameter : specifies the offset from the beginning of each vertex to the start of its position data (which is 0 since it's at the beginning)
             glVertexAttribPointer(ATTRIB_LOC_POSITION, 3, GL_FLOAT, false, sizeof(Vertex), (void*)0);
             
-            // color_loc 
+
+            // color_loc :
             glEnableVertexAttribArray(ATTRIB_LOC_COLOR);
+            //ATTRIB_LOC_TEXCOORD: is the location of the attribute in the shader program.
+            //4: the color is represented as a 4-component vector (RGBA)
+            //GL_UNSIGNED_BYTE: color components are stored as unsigned bytes.
+            //true: In this case, the color components are normalized to the range [0, 1] before being passed.
             glVertexAttribPointer(ATTRIB_LOC_COLOR, 4,  GL_UNSIGNED_BYTE, true, sizeof(Vertex),  (void*)offsetof(Vertex, color));
         
+
             //tex coord
             glEnableVertexAttribArray(ATTRIB_LOC_TEXCOORD);
+            //2: specifies that there are two components (u and v) in each texture coordinate
+            //GL_FLOAT :each component is a floating-point value.
+            //last parameter specifies the offset from the beginning of a vertex to its texture coordinate data
             glVertexAttribPointer(ATTRIB_LOC_TEXCOORD, 2, GL_FLOAT , false, sizeof(Vertex),  (void*)offsetof(Vertex, tex_coord));    
         
+
             //normal
             glEnableVertexAttribArray(ATTRIB_LOC_NORMAL);
+            //ATTRIB_LOC_NORMAL: is an integer constant that represents the location index of the normal attribute in the shader program
+            //3 : specifies that each normal vector has three components (x, y, z)
+            //GL_FLOAT: indicates that each component is a floating-point value. 
+            //false: means that the data should not be normalized before it is used#pragma endregion
+            //last parameter: specifies the offset from the beginning of a Vertex struct to its normal member variable. This tells OpenGL where to find the first normal vector in memory for a given vertex.
             glVertexAttribPointer(ATTRIB_LOC_NORMAL, 3,  GL_FLOAT, false, sizeof(Vertex),  (void*)offsetof(Vertex, normal));
         
             // element_buffer:
@@ -100,10 +121,10 @@ namespace our {
             //TODO: (Req 2) Write this function
 
             //void glDrawElements(	
-            //    GLenum mode,
+            //    GLenum mode, <= we use here GL_TRIANGLES 
             //   GLsizei count, <= Specifies the number of elements to be rendered with previously seted "elementCount"
             //   GLenum type,  <= we use "GL_UNSIGNED_INT" as VAO is (unsigned int)
-            //   const void * indices <= we start from index 0 to take all the elements 
+            //   const void * indices <=  Since we are starting at the beginning of the index buffer, we pass 0 as the offset
             // );
 
             glBindVertexArray(VAO);

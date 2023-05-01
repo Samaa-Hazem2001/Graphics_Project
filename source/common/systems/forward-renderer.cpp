@@ -23,8 +23,12 @@ namespace our {
             // Hints: the sky will be draw after the opaque objects so we would need depth testing but which depth funtion should we pick?
             // We will draw the sphere from the inside, so what options should we pick for the face culling.
             PipelineState skyPipelineState{};
+            //GL_LEQUAL : it means that a new pixel will be drawn if its depth value is less than or equal to the current depth value in the buffer. 
+            //This is a common choice for rendering objects that should be drawn on top of other objects, but not if they are behind them.
             skyPipelineState.depthTesting.enabled = true;
             skyPipelineState.depthTesting.function = GL_LEQUAL;
+
+            //GL_FRONT : it means that only the front-facing polygons will be rendered, and the back-facing polygons will be skipped.
             skyPipelineState.faceCulling.enabled = true;
             skyPipelineState.faceCulling.culledFace = GL_FRONT;
             
@@ -220,7 +224,11 @@ Parameters
         auto M = owner->getLocalToWorldMatrix();
         glm::vec3 eye = M * glm::vec4(0, 0, 0, 1);
         glm::vec3 center = M * glm::vec4(0, 0, -1, 1);
+        // as we get a vector direction from two points by subtract them
+        // the forward direction of the camera by subtractiong the eye and the center
+        // also notice that "w" of the vector has to be 0 , which is already done in the subtraction
         glm::vec3 cameraForward = glm::normalize(center - eye);
+
         std::sort(transparentCommands.begin(), transparentCommands.end(), [cameraForward](const RenderCommand& first, const RenderCommand& second){
             //TODO: (Req 9) Finish this function
             // HINT: the following return should return true "first" should be drawn before "second". 
@@ -252,7 +260,7 @@ Parameters
 
         //TODO: (Req 9) Set the color mask to true and the depth mask to true (to ensure the glClear will affect the framebuffer)
         glColorMask(true, true, true, true);
-        glDepthMask(true);
+        glDepthMask(true); 
 
         // If there is a postprocess material, bind the framebuffer
         if(postprocessMaterial){
@@ -262,6 +270,7 @@ Parameters
         }
 
         //TODO: (Req 9) Clear the color and depth buffers
+        // by this we clear both color and depth 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
         //TODO: (Req 9) Draw all the opaque commands
