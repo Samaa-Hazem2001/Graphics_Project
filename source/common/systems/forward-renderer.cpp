@@ -194,6 +194,7 @@ Parameters
         CameraComponent* camera = nullptr;
         opaqueCommands.clear();
         transparentCommands.clear();
+        lightSources.clear();
         for(auto entity : world->getEntities()){
             // If we hadn't found a camera yet, we look for a camera in this entity
             if(!camera) camera = entity->getComponent<CameraComponent>();
@@ -212,6 +213,11 @@ Parameters
                 // Otherwise, we add it to the opaque command list
                     opaqueCommands.push_back(command);
                 }
+            }
+            // if light component store it
+            if (auto lightComp = entity->getComponent<LightComponent>(); lightComp)
+            {
+                lightSources.push_back(lightComp);
             }
         }
 
@@ -276,12 +282,44 @@ Parameters
         //TODO: (Req 9) Draw all the opaque commands
         // Don't forget to set the "transform" uniform to be equal the model-view-projection matrix for each render command
         
-        for (auto command : opaqueCommands)
+        
+
+         for (auto command : opaqueCommands)
         {
-            command.material->setup();
-            //set the "transform" uniform to be equal the model-view-projection matrix for each render command 
-            // by changing model matrix by the current model for this command
-            command.material->shader->set("transform", VP * command.localToWorld);
+             command.material->setup();
+            // if the material of the object is lighted
+            if (auto light_material = dynamic_cast<LitMaterial *>(command.material); light_material)
+            {
+                    
+                light_material->shader->set("VP", VP);
+                light_material->shader->set("M", command.localToWorld);
+                light_material->shader->set("eye", eye);
+                light_material->shader->set("M_IT", glm::transpose(glm::inverse(command.localToWorld)));
+                light_material->shader->set("light_count", (int)lightSources.size());
+                
+                for (int i = 0; i < (int)lightSources.size(); i++)
+                {
+                  if(lightSources[i]->lightType >=0){
+                      // calculate position and direction of the light source based on the object
+                    glm::vec3 position = lightSources[i]->getOwner()->getLocalToWorldMatrix()*glm::vec4(0,0,0,1);
+                    glm::vec3 direction = lightSources[i]->getOwner()->getLocalToWorldMatrix()*glm::vec4(0,-1,0,0);
+                    
+                    light_material->shader->set("lights[" + std::to_string(i) + "].direction",direction);
+                    light_material->shader->set("lights[" + std::to_string(i) + "].color",lightSources[i]->color);
+                    light_material->shader->set("lights[" + std::to_string(i) + "].type", lightSources[i]->lightType);
+                    light_material->shader->set("lights[" + std::to_string(i) + "].position", position); 
+                    light_material->shader->set("lights[" + std::to_string(i) + "].diffuse", lightSources[i]->diffuse);
+                    light_material->shader->set("lights[" + std::to_string(i) + "].specular", lightSources[i]->specular);
+                    light_material->shader->set("lights[" + std::to_string(i) + "].attenuation", lightSources[i]->attenuation);
+                    light_material->shader->set("lights[" + std::to_string(i) + "].cone_angles", lightSources[i]->cone_angles);
+                    
+                }}
+            }
+            else
+            {
+                 command.material->shader->set("transform", VP * command.localToWorld);
+            }
+                        
             command.mesh->draw();
         }
 
@@ -358,6 +396,11 @@ Parameters
             */
             glDrawArrays(GL_TRIANGLES, 0, 3);
             
+        }
+        // if  there is a light material apply it
+        if (lightMaterial)
+        {
+            lightMaterial->setup();
         }
     }
 

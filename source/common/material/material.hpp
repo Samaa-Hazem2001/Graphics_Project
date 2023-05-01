@@ -63,6 +63,7 @@ namespace our {
             return new Material();
         }
     }
+    // --------------lit material------------------------
     class LitMaterial : public TexturedMaterial {
     public:
         Texture2D* albedo;
