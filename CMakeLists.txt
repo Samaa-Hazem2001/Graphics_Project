@@ -86,6 +86,12 @@ set(COMMON_SOURCES
 
         source/common/components/light.hpp
         source/common/components/light.cpp
+
+        source/common/components/running-object.hpp
+        source/common/components/running-object.cpp
+
+        source/common/components/collision.hpp
+        source/common/components/collision.cpp
 )
 
 # Define the directories in which to search for the included headers

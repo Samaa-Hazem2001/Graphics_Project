@@ -17,8 +17,20 @@ class Playstate: public our::State {
     our::MovementSystem movementSystem;
 
     void onInitialize() override {
+        
+        std::string gameMode = "config/game.jsonc";
+        std::ifstream file_in(gameMode);
+        if (!file_in)
+        {
+            std::cerr << "Couldn't open file: " << gameMode << std::endl;
+            return;
+        }
+        // Read the file into a json object then close the file
+        nlohmann::json gameConfig = nlohmann::json::parse(file_in, nullptr, true, true);
+        file_in.close();
+        
         // First of all, we get the scene configuration from the app config
-        auto& config = getApp()->getConfig()["scene"];
+        auto& config = gameConfig["scene"];
         // If we have assets in the scene config, we deserialize them
         if(config.contains("assets")){
             our::deserializeAllAssets(config["assets"]);

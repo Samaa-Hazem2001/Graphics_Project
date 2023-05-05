@@ -12,6 +12,8 @@
 
 #include <flags/flags.h>
 
+#include "../states/play-state.hpp"
+
 // Include the Dear ImGui implementation headers
 #define IMGUI_IMPL_OPENGL_LOADER_GLAD2
 #include <imgui_impl/imgui_impl_glfw.h>
@@ -204,6 +206,9 @@ int our::Application::run(int run_for_frames) {
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO();
+
+    ImFont *font = io.Fonts->AddFontFromFileTTF("assets\\fonts\\Ruda-Bold.ttf", 30.0f);
+
     ImGui::StyleColorsDark();
 
     // Initialize ImGui for GLFW and OpenGL
@@ -253,6 +258,58 @@ int our::Application::run(int run_for_frames) {
         ImGui::NewFrame();
 
         if(currentState) currentState->onImmediateGui(); // Call to run any required Immediate GUI.
+
+        // later
+
+        // if (currentState == states["main_menu"])
+        // {
+        //     ImGui::SetNextWindowSize(ImVec2(700, 500));
+        //     ImGui::SetWindowPos("Main menu", ImVec2(300, 120));
+        //     ImGui::Begin("Main menu", nullptr,ImGuiWindowFlags_NoMove);
+
+
+        //     ImGuiStyle *style = &ImGui::GetStyle();
+        //     style->WindowMenuButtonPosition = ImGuiDir_None;
+        //     ImVec4 *colors = style->Colors;
+        //     colors[ImGuiCol_Button] = ImVec4(128.0f / 256, 0.0f, 128.0f / 256, 1.0f);
+        //     colors[ImGuiCol_ButtonActive] = ImVec4(110.0f / 256, 0.0f, 110.0f / 256, 1.0f);
+        //     colors[ImGuiCol_ButtonHovered] = ImVec4(110.0f / 256, 0.0f, 110.0f / 256, 1.0f);
+        //     colors[ImGuiCol_WindowBg] = ImVec4(0.0f, 0.0f, 0.0f, 0.6f);
+        //     colors[ImGuiCol_TitleBg] = ImVec4(110.0f / 256, 0.0f, 110.0f / 256, 1.0f);
+        //     colors[ImGuiCol_TitleBgActive] = ImVec4(110.0f / 256, 0.0f, 110.0f / 256, 1.0f);
+        //     colors[ImGuiCol_TitleBgCollapsed] = ImVec4(110.0f / 256, 0.0f, 110.0f / 256, 1.0f);
+        //     colors[ImGuiCol_ResizeGrip] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+        //     colors[ImGuiCol_ResizeGripActive] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+        //     colors[ImGuiCol_ResizeGripHovered] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+
+        //     ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("THE LOST SNAIL").x) * 0.2);
+        //     ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("THE LOST SNAIL").y) * 0.2);
+
+        //     ImGui::PushFont(font1);
+        //     ImGui::Text("THE LOST SNAIL");
+        //     ImGui::PopFont();
+
+        //     ImGui::PushFont(font2);
+        //     ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Start the game").x) * 0.36);
+        //     ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("Start the game").y) * 0.4);
+
+        //     if (ImGui::Button("Start the game", ImVec2(350, 120)))
+        //     {
+        //         time(&start_time);
+        //         changeState("game_mode");
+        //     }
+
+        //     ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Start the game").x) * 0.36);
+
+        //     if (ImGui::Button("Exit", ImVec2(350, 120)))
+
+        //     {
+        //         return 0; // Good bye
+        //     }
+        //     ImGui::PopFont();
+        //     ImGui::End();
+        // }
+
 
         // If ImGui is using the mouse or keyboard, then we don't want the captured events to affect our keyboard and mouse objects.
         // For example, if you're focusing on an input and writing "W", the keyboard object shouldn't record this event.
@@ -392,12 +449,13 @@ void our::Application::setupCallbacks() {
         }
     });
 
+    // don't need scroll now
     // mouse scroll callbacks
-    glfwSetScrollCallback(window, [](GLFWwindow* window, double x_offset, double y_offset){
-        auto* app = static_cast<Application*>(glfwGetWindowUserPointer(window));
-        if(app){
-            app->getMouse().ScrollEvent(x_offset, y_offset);
-            if(app->currentState) app->currentState->onScrollEvent(x_offset, y_offset);
-        }
-    });
+    // glfwSetScrollCallback(window, [](GLFWwindow* window, double x_offset, double y_offset){
+    //     auto* app = static_cast<Application*>(glfwGetWindowUserPointer(window));
+    //     if(app){
+    //         app->getMouse().ScrollEvent(x_offset, y_offset);
+    //         if(app->currentState) app->currentState->onScrollEvent(x_offset, y_offset);
+    //     }
+    // });
 }
