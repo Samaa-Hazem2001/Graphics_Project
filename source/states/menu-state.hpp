@@ -45,7 +45,7 @@ class Menustate: public our::State {
     // A variable to record the time since the state is entered (it will be used for the fading effect).
     float time;
     // An array of the button that we can interact with
-    std::array<Button, 2> buttons;
+    // std::array<Button, 2> buttons;
 
     void onInitialize() override {
         // First, we create a material for the menu's background
@@ -56,7 +56,7 @@ class Menustate: public our::State {
         menuMaterial->shader->attach("assets/shaders/textured.frag", GL_FRAGMENT_SHADER);
         menuMaterial->shader->link();
         // Then we load the menu texture
-        menuMaterial->texture = our::texture_utils::loadImage("assets/textures/menu.png");
+        menuMaterial->texture = our::texture_utils::loadImage("assets/textures/sky.jpg");
         // Initially, the menu material will be black, then it will fade in
         menuMaterial->tint = glm::vec4(0.0f, 0.0f, 0.0f, 0.0f);
 
@@ -99,13 +99,13 @@ class Menustate: public our::State {
         // - The argument list () which is the arguments that the lambda should receive when it is called.
         //      We leave it empty since button actions receive no input.
         // - The body {} which contains the code to be executed. 
-        buttons[0].position = {830.0f, 607.0f};
-        buttons[0].size = {400.0f, 33.0f};
-        buttons[0].action = [this](){this->getApp()->changeState("play");};
+        // buttons[0].position = {830.0f, 607.0f};
+        // buttons[0].size = {400.0f, 33.0f};
+        // buttons[0].action = [this](){this->getApp()->changeState("play");};
 
-        buttons[1].position = {830.0f, 644.0f};
-        buttons[1].size = {400.0f, 33.0f};
-        buttons[1].action = [this](){this->getApp()->close();};
+        // buttons[1].position = {830.0f, 644.0f};
+        // buttons[1].size = {400.0f, 33.0f};
+        // buttons[1].action = [this](){this->getApp()->close();};
     }
 
     void onDraw(double deltaTime) override {
@@ -126,12 +126,12 @@ class Menustate: public our::State {
 
         // If the mouse left-button is just pressed, check if the mouse was inside
         // any menu button. If it was inside a menu button, run the action of the button.
-        if(mouse.justPressed(0)){
-            for(auto& button: buttons){
-                if(button.isInside(mousePosition))
-                    button.action();
-            }
-        }
+        // if(mouse.justPressed(0)){
+        //     for(auto& button: buttons){
+        //         if(button.isInside(mousePosition))
+        //             button.action();
+        //     }
+        // }
 
         // Get the framebuffer size to set the viewport and the create the projection matrix.
         glm::ivec2 size = getApp()->getFrameBufferSize();
@@ -159,13 +159,13 @@ class Menustate: public our::State {
         rectangle->draw();
 
         // For every button, check if the mouse is inside it. If the mouse is inside, we draw the highlight rectangle over it.
-        for(auto& button: buttons){
-            if(button.isInside(mousePosition)){
-                highlightMaterial->setup();
-                highlightMaterial->shader->set("transform", VP*button.getLocalToWorld());
-                rectangle->draw();
-            }
-        }
+        // for(auto& button: buttons){
+        //     if(button.isInside(mousePosition)){
+        //         highlightMaterial->setup();
+        //         highlightMaterial->shader->set("transform", VP*button.getLocalToWorld());
+        //         rectangle->draw();
+        //     }
+        // }
         
     }
 

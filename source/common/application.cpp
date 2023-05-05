@@ -259,56 +259,162 @@ int our::Application::run(int run_for_frames) {
 
         if(currentState) currentState->onImmediateGui(); // Call to run any required Immediate GUI.
 
-        // later
 
-        // if (currentState == states["main_menu"])
-        // {
-        //     ImGui::SetNextWindowSize(ImVec2(700, 500));
-        //     ImGui::SetWindowPos("Main menu", ImVec2(300, 120));
-        //     ImGui::Begin("Main menu", nullptr,ImGuiWindowFlags_NoMove);
+        if (currentState == states["menu"])
+        {
+            ImGui::SetNextWindowSize(ImVec2(700, 500));
+            ImGui::SetWindowPos("Main menu", ImVec2(300, 120));
+            ImGui::Begin("Main menu", nullptr,ImGuiWindowFlags_NoMove);
 
 
-        //     ImGuiStyle *style = &ImGui::GetStyle();
-        //     style->WindowMenuButtonPosition = ImGuiDir_None;
-        //     ImVec4 *colors = style->Colors;
-        //     colors[ImGuiCol_Button] = ImVec4(128.0f / 256, 0.0f, 128.0f / 256, 1.0f);
-        //     colors[ImGuiCol_ButtonActive] = ImVec4(110.0f / 256, 0.0f, 110.0f / 256, 1.0f);
-        //     colors[ImGuiCol_ButtonHovered] = ImVec4(110.0f / 256, 0.0f, 110.0f / 256, 1.0f);
-        //     colors[ImGuiCol_WindowBg] = ImVec4(0.0f, 0.0f, 0.0f, 0.6f);
-        //     colors[ImGuiCol_TitleBg] = ImVec4(110.0f / 256, 0.0f, 110.0f / 256, 1.0f);
-        //     colors[ImGuiCol_TitleBgActive] = ImVec4(110.0f / 256, 0.0f, 110.0f / 256, 1.0f);
-        //     colors[ImGuiCol_TitleBgCollapsed] = ImVec4(110.0f / 256, 0.0f, 110.0f / 256, 1.0f);
-        //     colors[ImGuiCol_ResizeGrip] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
-        //     colors[ImGuiCol_ResizeGripActive] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
-        //     colors[ImGuiCol_ResizeGripHovered] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+            ImGuiStyle *style = &ImGui::GetStyle();
+            style->WindowMenuButtonPosition = ImGuiDir_None;
+            ImVec4 *colors = style->Colors;
+            // later change
+            colors[ImGuiCol_Button] = ImVec4(0.0f / 256, 0.0f / 256, 153.0f, 1.0f);
+            colors[ImGuiCol_ButtonActive] = ImVec4(0.0f / 256, 0.0f / 256, 255.0f, 1.0f);
+            colors[ImGuiCol_ButtonHovered] = ImVec4(0.0f / 256, 0.0f / 256, 255.0f, 1.0f);
+            colors[ImGuiCol_WindowBg] = ImVec4(0.0f, 0.0f, 0.0f, 0.6f);
+            colors[ImGuiCol_TitleBg] = ImVec4(0.0f / 256, 0.0f / 256, 255.0f, 1.0f);
+            colors[ImGuiCol_TitleBgActive] = ImVec4(0.0f / 256, 0.0f / 256, 255.0f, 1.0f);
+            colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.0f / 256, 0.0f / 256, 255.0f, 1.0f);
+            colors[ImGuiCol_ResizeGrip] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+            colors[ImGuiCol_ResizeGripActive] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+            colors[ImGuiCol_ResizeGripHovered] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
 
-        //     ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("THE LOST SNAIL").x) * 0.2);
-        //     ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("THE LOST SNAIL").y) * 0.2);
+            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Way To Home").x) * 0.2);
+            ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("Way To Home").y) * 0.2);
 
-        //     ImGui::PushFont(font1);
-        //     ImGui::Text("THE LOST SNAIL");
-        //     ImGui::PopFont();
+            ImGui::PushFont(font);
+            ImGui::Text("Way To Home");
+            ImGui::PopFont();
 
-        //     ImGui::PushFont(font2);
-        //     ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Start the game").x) * 0.36);
-        //     ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("Start the game").y) * 0.4);
+            ImGui::PushFont(font);
+            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Start").x) * 0.36);
+            ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("Start").y) * 0.4);
 
-        //     if (ImGui::Button("Start the game", ImVec2(350, 120)))
-        //     {
-        //         time(&start_time);
-        //         changeState("game_mode");
-        //     }
+            if (ImGui::Button("Start", ImVec2(200, 150)))
+            {
+                // time(&start_time);
+                changeState("play");
+            }
 
-        //     ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Start the game").x) * 0.36);
+            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Start").x) * 0.36);
 
-        //     if (ImGui::Button("Exit", ImVec2(350, 120)))
+            if (ImGui::Button("Exit", ImVec2(200, 150)))
 
-        //     {
-        //         return 0; // Good bye
-        //     }
-        //     ImGui::PopFont();
-        //     ImGui::End();
-        // }
+            {
+                return 0; 
+            }
+            ImGui::PopFont();
+            ImGui::End();
+        }
+
+        else if (currentState == states["play"])
+        {
+            // time(&end_time);
+            // if (abs(start_time - end_time) >= 60 || loser)
+            if (penalty)
+                changeState("gameOver");
+
+            ImGui::SetNextWindowSize(ImVec2(1280, 200));
+            ImGui::Begin(" ", nullptr, ImGuiWindowFlags_NoMove);
+            ImGui::SetWindowPos(" ", ImVec2(0, 0));
+
+            ImGuiStyle *style = &ImGui::GetStyle();
+
+            ImVec4 *colors = style->Colors;
+            colors[ImGuiCol_WindowBg] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+            colors[ImGuiCol_Border] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+            colors[ImGuiCol_ResizeGrip] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+            colors[ImGuiCol_ResizeGripActive] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+            colors[ImGuiCol_ResizeGripHovered] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+            colors[ImGuiCol_TitleBg] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+            colors[ImGuiCol_TitleBgActive] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+            colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+
+            // ImGui::PushFont(font);
+            // ImGui::SetCursorPosX(0);
+
+            // std::string t1 = "00:";
+            // int time = 60 - abs(start_time - end_time);
+            // std::string t2 = std::to_string(int(time));
+            // std::string countdown;
+
+            // if (10 - time > 0)
+                // countdown = t1 + "0" + t2;
+            // else
+                // countdown = t1 + t2;
+            // ImGui::Text(countdown.c_str());
+            // ImGui::PopFont();
+
+            ImGui::SetCursorPosX(960);
+            ImGui::SetCursorPosY(60);
+
+            ImGui::PushFont(font);
+            std::string l1 = "REWARD: ";
+            std::string l2 = std::to_string(reward);
+            std::string totalLine = l1 + l2;
+            ImGui::Text(totalLine.c_str());
+            ImGui::PopFont();
+
+            ImGui::End();
+        }
+
+        else
+        {
+
+            ImGui::SetNextWindowSize(ImVec2(1000, 1000));
+            ImGui::Begin(" ", nullptr, ImGuiWindowFlags_NoMove);
+            ImGui::SetWindowPos(" ", ImVec2(150, -150));
+
+            ImGuiStyle *style = &ImGui::GetStyle();
+            ImVec4 *colors = style->Colors;
+            colors[ImGuiCol_WindowBg] = ImVec4(0.0f, 0.0f, 0.0f, 0.6f);
+            ImGui::SetNextWindowSize(ImVec2(1500, 100));
+            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("GAME OVER").x) * 0.2);
+            ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("GAME OVER").y) * 0.2);
+            ImGui::PushFont(font);
+            if (penalty)
+                ImGui::Text("GAME OVER");
+            else
+            {
+                ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("GOOD JOB!").x) * 0.5);
+                ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("GOOD JOB!").y) * 0.2);
+                ImGui::Text("GOOD JOB!");
+            }
+            ImGui::PopFont();
+
+            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("GAME OVER").x) * 0.4);
+            ImGui::PushFont(font);
+            std::string l1 = "REWARD: ";
+            std::string l2 = std::to_string(reward);
+            std::string totalLine = l1 + l2;
+            ImGui::Text(totalLine.c_str());
+
+            ImGui::PopFont();
+
+            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Restart").x) * 0.4);
+            ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("Restart").y) * 0.55);
+
+            if (ImGui::Button("Restart", ImVec2(200, 150)))
+            {
+                // time(&start_time);
+                penalty = false;
+                reward = 0;
+                registerState<Playstate>("play");
+                changeState("play");
+            }
+
+            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Restart the game").x) * 0.4);
+
+            if (ImGui::Button("Exit", ImVec2(380, 120)))
+
+            {
+                return 0; // Good bye
+            }
+            ImGui::End();
+        }
 
 
         // If ImGui is using the mouse or keyboard, then we don't want the captured events to affect our keyboard and mouse objects.
