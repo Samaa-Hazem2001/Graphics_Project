@@ -408,10 +408,10 @@ int our::Application::run(int run_for_frames) {
 
             ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Restart the game").x) * 0.4);
 
-            if (ImGui::Button("Exit", ImVec2(380, 120)))
+            if (ImGui::Button("Exit", ImVec2(200, 150)))
 
             {
-                return 0; // Good bye
+                return 0;
             }
             ImGui::End();
         }
