@@ -73,6 +73,7 @@ namespace our {
     public:
         int reward;
         bool penalty;
+        time_t start_time,end_time ;
 
         // Create an application with following configuration
         Application(const nlohmann::json& app_config) : app_config(app_config) {

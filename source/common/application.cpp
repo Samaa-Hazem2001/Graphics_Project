@@ -295,7 +295,7 @@ int our::Application::run(int run_for_frames) {
 
             if (ImGui::Button("Start", ImVec2(200, 150)))
             {
-                // time(&start_time);
+                time(&start_time);
                 changeState("play");
             }
 
@@ -312,9 +312,9 @@ int our::Application::run(int run_for_frames) {
 
         else if (currentState == states["play"])
         {
-            // time(&end_time);
-            // if (abs(start_time - end_time) >= 60 || loser)
-            if (penalty)
+            time(&end_time);
+            if (abs(start_time - end_time) >= 60 || penalty)
+            // if (penalty)
                 changeState("gameOver");
 
             ImGui::SetNextWindowSize(ImVec2(1280, 200));
@@ -406,7 +406,7 @@ int our::Application::run(int run_for_frames) {
                 changeState("play");
             }
 
-            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Restart the game").x) * 0.4);
+            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Restart").x) * 0.4);
 
             if (ImGui::Button("Exit", ImVec2(200, 150)))
 
