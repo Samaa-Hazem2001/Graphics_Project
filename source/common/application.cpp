@@ -19,6 +19,7 @@
 //these two headers are already included in the <Windows.h> header
 #pragma comment(lib, "Winmm.lib")
 
+
 // Include the Dear ImGui implementation headers
 #define IMGUI_IMPL_OPENGL_LOADER_GLAD2
 #include <imgui_impl/imgui_impl_glfw.h>
@@ -159,8 +160,6 @@ our::WindowConfiguration our::Application::getWindowConfiguration() {
 // if run_for_frames == 0, the application runs indefinitely till manually closed.
 int our::Application::run(int run_for_frames) {
 
-    mciSendString("open \"assets/sound/breakout2.mp3\" type mpegvideo alias mp3", NULL, 0, NULL);
-    mciSendString("play mp3 repeat", NULL, 0, NULL);
     // Set the function to call when an error occurs.
     glfwSetErrorCallback(glfw_error_callback);
 
@@ -303,6 +302,7 @@ int our::Application::run(int run_for_frames) {
             if (ImGui::Button("Start", ImVec2(200, 150)))
             {
                 time(&start_time);
+                PlaySound("assets/sound/start.wav", NULL, SND_ASYNC);
                 changeState("play");
             }
 
@@ -320,9 +320,14 @@ int our::Application::run(int run_for_frames) {
         else if (currentState == states["play"])
         {
             time(&end_time);
-            if (abs(start_time - end_time) >= 60 || penalty)
             // if (penalty)
+            if (abs(start_time - end_time) >= 60 || penalty){
+                if(penalty)
+                    PlaySound("assets/sound/loser.wav", NULL, SND_ASYNC);
+                else
+                    PlaySound("assets/sound/winner.wav", NULL, SND_ASYNC);
                 changeState("gameOver");
+            }
 
             ImGui::SetNextWindowSize(ImVec2(1280, 200));
             ImGui::Begin(" ", nullptr, ImGuiWindowFlags_NoMove);
@@ -357,6 +362,7 @@ int our::Application::run(int run_for_frames) {
 
             ImGui::SetCursorPosX(960);
             ImGui::SetCursorPosY(60);
+            
 
             ImGui::PushFont(font);
             std::string l1 = "REWARD: ";
@@ -364,6 +370,17 @@ int our::Application::run(int run_for_frames) {
             std::string totalLine = l1 + l2;
             ImGui::Text(totalLine.c_str());
             ImGui::PopFont();
+
+            // ImGui::SetCursorPosX(960);
+            // ImGui::SetCursorPosY(40);
+            
+
+            // ImGui::PushFont(font);
+            // std::string l3 = "LIVE: ";
+            // std::string l4 = std::to_string(penalty);
+            // std::string totalLine2 = l3 + l4;
+            // ImGui::Text(totalLine2.c_str());
+            // ImGui::PopFont();
 
             ImGui::End();
         }
@@ -410,6 +427,7 @@ int our::Application::run(int run_for_frames) {
                 penalty = false;
                 reward = 0;
                 registerState<Playstate>("play");
+                PlaySound("assets/sound/start.wav", NULL, SND_ASYNC);
                 changeState("play");
             }
 

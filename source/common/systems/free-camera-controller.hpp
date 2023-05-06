@@ -15,6 +15,11 @@
 
 #include "iostream"
 
+#include<windows.h>
+#include <Mmsystem.h>
+//these two headers are already included in the <Windows.h> header
+#pragma comment(lib, "Winmm.lib")
+
 namespace our
 {
 
@@ -109,10 +114,22 @@ namespace our
                 if (collisionX && collisionY)
                 {
                     world->markForRemoval(collisionEntity);
-                    if (Collision->getCollisionType() == "penalty")
+                    if (Collision->getCollisionType() == "penalty"){
+                        // PlaySound("assets/sound/lose.wav", NULL, SND_ASYNC);
+                        // mciSendString("close lose & open \"assets/sound/lose.mp3\" type mpegvideo alias lose", NULL, 0, NULL);
+                        // mciSendString("play lose", NULL, 0, NULL);
+                        // mciSendString("close lose", NULL, 0, NULL);
+    
                         app->penalty = true;
-                    else
+                    }
+                    else{
+                        PlaySound("assets/sound/win.wav", NULL, SND_ASYNC);
+                        // mciSendString("close win & open \"assets/sound/win.mp3\" type mpegvideo alias win", NULL, 0, NULL);
+                        // mciSendString("play win", NULL, 0, NULL);
+                        // mciSendString("close win", NULL, 0, NULL);
                         app->reward += 10;
+
+                    }
 
                     break;
                 }
