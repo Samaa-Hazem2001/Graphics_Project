@@ -215,6 +215,8 @@ int our::Application::run(int run_for_frames) {
 
     ImFont *font = io.Fonts->AddFontFromFileTTF("assets\\fonts\\Ruda-Bold.ttf", 30.0f);
     ImFont *fontBlopy = io.Fonts->AddFontFromFileTTF("assets\\fonts\\fontBlopy.ttf", 60.0f);
+    ImFont *fontGameOver = io.Fonts->AddFontFromFileTTF("assets\\fonts\\game-over.ttf", 100.0f);
+    ImFont *fontItalic = io.Fonts->AddFontFromFileTTF("assets\\fonts\\fontItalic.ttf", 130.0f);
 
     ImGui::StyleColorsDark();
 
@@ -402,7 +404,7 @@ int our::Application::run(int run_for_frames) {
             ImGui::SetNextWindowSize(ImVec2(1500, 100));
             ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("GAME OVER").x) * 0.2);
             ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("GAME OVER").y) * 0.2);
-            ImGui::PushFont(font);
+            ImGui::PushFont(fontGameOver);
             if (penalty)
                 ImGui::Text("GAME OVER");
             else
@@ -414,7 +416,7 @@ int our::Application::run(int run_for_frames) {
             ImGui::PopFont();
 
             ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("GAME OVER").x) * 0.4);
-            ImGui::PushFont(font);
+            ImGui::PushFont(fontItalic);
             std::string l1 = "REWARD: ";
             std::string l2 = std::to_string(reward);
             std::string totalLine = l1 + l2;
