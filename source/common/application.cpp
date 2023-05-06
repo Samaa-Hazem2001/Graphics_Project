@@ -14,6 +14,11 @@
 
 #include "../states/play-state.hpp"
 
+#include<windows.h>
+#include <Mmsystem.h>
+//these two headers are already included in the <Windows.h> header
+#pragma comment(lib, "Winmm.lib")
+
 // Include the Dear ImGui implementation headers
 #define IMGUI_IMPL_OPENGL_LOADER_GLAD2
 #include <imgui_impl/imgui_impl_glfw.h>
@@ -154,6 +159,8 @@ our::WindowConfiguration our::Application::getWindowConfiguration() {
 // if run_for_frames == 0, the application runs indefinitely till manually closed.
 int our::Application::run(int run_for_frames) {
 
+    mciSendString("open \"assets/sound/breakout.mp3\" type mpegvideo alias mp3", NULL, 0, NULL);
+    mciSendString("play mp3 repeat", NULL, 0, NULL);
     // Set the function to call when an error occurs.
     glfwSetErrorCallback(glfw_error_callback);
 
