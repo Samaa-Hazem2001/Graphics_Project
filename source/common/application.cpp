@@ -214,6 +214,7 @@ int our::Application::run(int run_for_frames) {
     ImGuiIO& io = ImGui::GetIO();
 
     ImFont *font = io.Fonts->AddFontFromFileTTF("assets\\fonts\\Ruda-Bold.ttf", 30.0f);
+    ImFont *fontBlopy = io.Fonts->AddFontFromFileTTF("assets\\fonts\\fontBlopy.ttf", 60.0f);
 
     ImGui::StyleColorsDark();
 
@@ -277,38 +278,41 @@ int our::Application::run(int run_for_frames) {
             style->WindowMenuButtonPosition = ImGuiDir_None;
             ImVec4 *colors = style->Colors;
             // later change
-            colors[ImGuiCol_Button] = ImVec4(0.0f / 256, 0.0f / 256, 153.0f, 1.0f);
-            colors[ImGuiCol_ButtonActive] = ImVec4(0.0f / 256, 0.0f / 256, 255.0f, 1.0f);
-            colors[ImGuiCol_ButtonHovered] = ImVec4(0.0f / 256, 0.0f / 256, 255.0f, 1.0f);
+            // rgb(149, 72, 100)
+            colors[ImGuiCol_Button] = ImVec4(149.0f / 256, 72.0f / 256, 100.0f/ 256, 1.0f);
+            // rgb(168, 89, 118)
+            colors[ImGuiCol_ButtonActive] = ImVec4(168.0f / 256, 89.0f / 256, 118.0f/ 256, 1.0f);
+            colors[ImGuiCol_ButtonHovered] = ImVec4(168.0f / 256, 89.0f / 256, 118.0f/ 256, 1.0f);
             colors[ImGuiCol_WindowBg] = ImVec4(0.0f, 0.0f, 0.0f, 0.6f);
             colors[ImGuiCol_TitleBg] = ImVec4(0.0f / 256, 0.0f / 256, 255.0f, 1.0f);
-            colors[ImGuiCol_TitleBgActive] = ImVec4(0.0f / 256, 0.0f / 256, 255.0f, 1.0f);
-            colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.0f / 256, 0.0f / 256, 255.0f, 1.0f);
+            colors[ImGuiCol_TitleBgActive] = ImVec4(168.0f / 256, 89.0f / 256, 118.0f/ 256, 1.0f);
+            colors[ImGuiCol_TitleBgCollapsed] = ImVec4(168.0f / 256, 89.0f / 256, 118.0f/ 256, 1.0f);
             colors[ImGuiCol_ResizeGrip] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
             colors[ImGuiCol_ResizeGripActive] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
             colors[ImGuiCol_ResizeGripHovered] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
 
-            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Way To Home").x) * 0.2);
+            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Way To Home").x) * 0.3);
             ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("Way To Home").y) * 0.2);
 
-            ImGui::PushFont(font);
+            ImGui::PushFont(fontBlopy);
             ImGui::Text("Way To Home");
             ImGui::PopFont();
 
             ImGui::PushFont(font);
-            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Start").x) * 0.36);
-            ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("Start").y) * 0.4);
+            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Start").x) * 0.2);
+            ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("Start").y) * 0.5);
 
-            if (ImGui::Button("Start", ImVec2(200, 150)))
+            if (ImGui::Button("Start", ImVec2(200, 100)))
             {
                 time(&start_time);
                 PlaySound("assets/sound/start.wav", NULL, SND_ASYNC);
                 changeState("play");
             }
 
-            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Start").x) * 0.36);
+            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Exit").x) * 0.6);
+            ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("Exit").y) * 0.5);
 
-            if (ImGui::Button("Exit", ImVec2(200, 150)))
+            if (ImGui::Button("Exit", ImVec2(200, 100)))
 
             {
                 return 0; 
@@ -418,10 +422,11 @@ int our::Application::run(int run_for_frames) {
 
             ImGui::PopFont();
 
-            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Restart").x) * 0.4);
-            ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("Restart").y) * 0.55);
+            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Restart").x) * 0.3);
+            ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("Restart").y) * 0.5);
+            
 
-            if (ImGui::Button("Restart", ImVec2(200, 150)))
+            if (ImGui::Button("Restart", ImVec2(200, 100)))
             {
                 // time(&start_time);
                 penalty = false;
@@ -431,9 +436,13 @@ int our::Application::run(int run_for_frames) {
                 changeState("play");
             }
 
-            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Restart").x) * 0.4);
 
-            if (ImGui::Button("Exit", ImVec2(200, 150)))
+
+            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Exit").x) * 0.6);
+            ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("Exit").y) * 0.5);
+
+
+            if (ImGui::Button("Exit", ImVec2(200, 100)))
 
             {
                 return 0;
