@@ -159,7 +159,7 @@ our::WindowConfiguration our::Application::getWindowConfiguration() {
 // if run_for_frames == 0, the application runs indefinitely till manually closed.
 int our::Application::run(int run_for_frames) {
 
-    mciSendString("open \"assets/sound/breakout.mp3\" type mpegvideo alias mp3", NULL, 0, NULL);
+    mciSendString("open \"assets/sound/breakout2.mp3\" type mpegvideo alias mp3", NULL, 0, NULL);
     mciSendString("play mp3 repeat", NULL, 0, NULL);
     // Set the function to call when an error occurs.
     glfwSetErrorCallback(glfw_error_callback);
