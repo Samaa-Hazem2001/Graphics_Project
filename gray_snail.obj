@@ -1,7 +1,7 @@
 # 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
 # File Created: 09.12.2011 14:52:46
 
-mtllib 12249_Bird_v1_L2.mtl
+lib 12249_Bird_v1_L2.
 
 #
 # object 12249_Bird_v1
@@ -27569,7 +27569,7 @@ vt 0.5316 0.0641 0.0000
 # 9760 texture coords
 
 g 12249_Bird_v1
-usemtl 12249_Bird_v1
+use 12249_Bird_v1
 s 2
 f 1/1/1 2/4889/2 3/2657/3 4/4892/4 
 f 2/4889/2 5/2/5 6/4890/6 3/2657/3 
