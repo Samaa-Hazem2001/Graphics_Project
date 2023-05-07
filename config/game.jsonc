@@ -32,7 +32,7 @@
         "RunningObject": "assets/textures/snail7.png",
         "floor": "assets/textures/floor.png",
         "penalty": "assets/textures/tex_mrkrabs.png",
-        "reward": "assets/textures/yellowCoin.png",
+        "reward": "assets/textures/reward.jpg",
         "yellow": "assets/textures/yellow2.png",
         "white": "assets/textures/white.png",
         "galaxy_gradient": "assets/textures/galaxy_gradient.jpg",
@@ -43,7 +43,7 @@
         "RunningObject": "assets/models/gray_snail.obj",
         "floor": "assets/models/floor.obj",
         "penalty": "assets/models/mrkrabs.obj",
-        "reward": "assets/models/yellowCoin.obj",
+        "reward": "assets/models/reward.obj",
         "home": "assets/models/KrustyKrab.obj"
       },
       "samplers": {
@@ -704,9 +704,9 @@
       },
       //--------------------- reward
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [0.3, -1, -10],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -733,9 +733,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [0.5, -1, -15],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -762,9 +762,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [-0.3, -1, -25],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -790,9 +790,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [0.9, -1, -35],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -818,9 +818,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [1, -1, -45],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -846,9 +846,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [-1, -1, -55],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -874,9 +874,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [1, -1, -70],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -902,9 +902,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [-0.3, -1, -85],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -930,9 +930,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [0.7, -1, -90],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -958,9 +958,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [0.7, -1, -105],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -986,9 +986,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [-1, -1, -115],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -1014,9 +1014,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [0, -1, -125],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -1043,9 +1043,9 @@
       },
       //2---
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [0.3, -1, -150],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -1071,9 +1071,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [0.5, -1, -170],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -1099,9 +1099,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [-0.3, -1, -190],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -1127,9 +1127,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [0.9, -1, -220],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -1155,9 +1155,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [1, -1, -230],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -1183,9 +1183,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [-1, -1, -250],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -1211,9 +1211,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [1, -1, -270],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -1239,9 +1239,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [-0.3, -1, -290],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -1267,9 +1267,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [0.7, -1, -310],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -1295,9 +1295,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [0.7, -1, -330],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -1323,9 +1323,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [-1, -1, -350],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
@@ -1351,9 +1351,9 @@
         ]
       },
       {
-        "rotation": [0, 45, 0],
+        "rotation": [-90, 45, 0],
         "position": [0, -1, -370],
-        "scale": [5, 5, 5],
+        "scale": [0.2, 0.2, 0.3],
         "components": [
           {
             "type": "Mesh Renderer",
