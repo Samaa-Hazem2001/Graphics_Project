@@ -430,7 +430,7 @@ int our::Application::run(int run_for_frames) {
 
             if (ImGui::Button("Restart", ImVec2(200, 100)))
             {
-                // time(&start_time);
+                time(&start_time);
                 penalty = false;
                 reward = 0;
                 registerState<Playstate>("play");

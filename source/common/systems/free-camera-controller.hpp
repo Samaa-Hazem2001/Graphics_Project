@@ -115,12 +115,21 @@ namespace our
                 {
                     world->markForRemoval(collisionEntity);
                     if (Collision->getCollisionType() == "penalty"){
-                        // PlaySound("assets/sound/lose.wav", NULL, SND_ASYNC);
                         // mciSendString("close lose & open \"assets/sound/lose.mp3\" type mpegvideo alias lose", NULL, 0, NULL);
                         // mciSendString("play lose", NULL, 0, NULL);
                         // mciSendString("close lose", NULL, 0, NULL);
-    
-                        app->penalty = true;
+                        if(app->reward == 0 || app->reward < 0){
+                            app->penalty = true;
+                            app->reward = 0;
+                            return;
+                        }
+                        app->reward -= 10;
+                        if(app->reward == 0 || app->reward < 0){
+                            app->penalty = true;
+                            app->reward = 0;
+                            return;
+                        }
+                        PlaySound("assets/sound/lose.wav", NULL, SND_ASYNC);
                     }
                     else{
                         PlaySound("assets/sound/win.wav", NULL, SND_ASYNC);
