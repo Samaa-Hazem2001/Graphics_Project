@@ -54,8 +54,8 @@
       },
       "materials": {
         "RunningObject": {
-          "type": "textured",
-          "shader": "textured",
+          "type": "lighted",
+          "shader": "lighted",
           "pipelineState": {
             "faceCulling": {
               "enabled": false
@@ -66,12 +66,13 @@
           },
           "tint": [1, 1, 1, 1],
           "texture": "RunningObject",
-          "sampler": "default"//,
-          // "albedo": "RunningObject",
-          // "specular": "white",
-          // "roughness": "galaxy_gradient",
-          // "emissive": "black",
-          // "ambient_occlusion": "white"
+          "sampler": "default"
+          ,
+          "albedo": "RunningObject",
+          "specular": "white",
+          "roughness": "galaxy_gradient",
+          "emissive": "black",
+          "ambient_occlusion": "white"
         },
         "penalty": {
           "type": "textured",
@@ -104,8 +105,8 @@
           "sampler": "default"
         },
         "reward": {
-          "type": "textured",
-          "shader": "textured",
+          "type": "lighted",
+          "shader": "lighted",
           "pipelineState": {
             "faceCulling": {
               "enabled": false
@@ -116,12 +117,12 @@
           },
           "tint": [1, 1, 1, 1],
           "texture": "reward",
-          "sampler": "default"//,
-          // "albedo": "reward",
-          // "specular": "yellow",
-          // "roughness": "black",
-          // "emissive": "black",
-          // "ambient_occlusion": "white"
+          "sampler": "default",
+          "albedo": "reward",
+          "specular": "yellow",
+          "roughness": "black",
+          "emissive": "black",
+          "ambient_occlusion": "white"
         },
       "home": {
           "type": "textured",
@@ -157,20 +158,21 @@
           {
             "type": "Movement",
             "linearVelocity": [0, 0, -10]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "DIRECTIONAL",
-          //   "diffuse": [0, 1, 0],
-          //   "specular": [0, 1, 0]
-          //},
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0, 0, 1],
-          //   "specular": [0, 0, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "DIRECTIONAL",
+            "diffuse": [0, 1, 0],
+            "specular": [0, 1, 0]
+          },
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0, 0, 1],
+            "specular": [0, 0, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ],
         "children": [
           {
@@ -1354,15 +1356,16 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001],
-          //   "color": [0, 0, 1, 1]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [1, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.01, 0.01, 0.01],
+            "color": [0, 0, 1, 1]
+          }
         ]
       },
       {
@@ -1383,15 +1386,16 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001],
-          //   "color": [0, 0, 1, 1]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001],
+            "color": [0, 0, 1, 1]
+          }
         ]
       },
       {
@@ -1412,14 +1416,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -1440,14 +1445,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -1468,14 +1474,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       // 2
@@ -1497,14 +1504,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -1525,14 +1533,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -1553,14 +1562,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -1581,14 +1591,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -1609,14 +1620,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       // 3
@@ -1638,14 +1650,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -1666,14 +1679,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -1694,14 +1708,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -1722,14 +1737,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -1750,14 +1766,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       // 4
@@ -1779,14 +1796,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -1807,14 +1825,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -1835,14 +1854,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -1863,14 +1883,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -1891,14 +1912,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       // 5
@@ -1920,14 +1942,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -1948,14 +1971,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -1976,14 +2000,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -2004,14 +2029,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -2032,14 +2058,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       // 6
@@ -2061,14 +2088,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -2089,14 +2117,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -2117,14 +2146,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -2145,14 +2175,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -2173,14 +2204,15 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       },
       {
@@ -2201,53 +2233,54 @@
           {
             "type": "Movement",
             "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
+          }
+          ,
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0.4, 1, 1],
+            "specular": [0.4, 1, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          }
         ]
       }//,
       ///////////////////////////////////////////////////////////////////////
       //////////////////////////// lightSources /////////////////////////////
       ///////////////////////////////////////////////////////////////////////
 
-      // {
-      //   "position": [0, -5,-10],
-      //   "components": [
-      //     {
-      //       "type": "light"
-      //     },
-      //     {
-      //       "type": "light",
-      //       "typeOfLight": "POINT",
-      //       "diffuse": [0, 0, 1],
-      //       "specular": [0, 0, 1],
-      //       "attenuation": [0.001, 0.001, 0.0001]
-      //     },
-      //     {
-      //       "type": "Movement",
-      //       "angularVelocity": [0, 90, 0]
-      //     }
-      //   ]
-      // },
-      // {
-      //   "position": [0, -10, -40],
-      //   "components": [
-      //     {
-      //       "type": "light"
-      //     },
-      //     {
-      //       "type": "light",
-      //       "typeOfLight": "DIRECTIONAL",
-      //       "diffuse": [1, 0, 0],
-      //       "specular": [1, 0, 0]
-      //     } 
-      //   ]
-      // }
+      ,{
+        "position": [0, -5,-10],
+        "components": [
+          {
+            "type": "light"
+          },
+          {
+            "type": "light",
+            "typeOfLight": "POINT",
+            "diffuse": [0, 0, 1],
+            "specular": [0, 0, 1],
+            "attenuation": [0.001, 0.001, 0.0001]
+          },
+          {
+            "type": "Movement",
+            "angularVelocity": [0, 90, 0]
+          }
+        ]
+      },
+      {
+        "position": [0, -10, -40],
+        "components": [
+          {
+            "type": "light"
+          },
+          {
+            "type": "light",
+            "typeOfLight": "DIRECTIONAL",
+            "diffuse": [1, 0, 0],
+            "specular": [1, 0, 0]
+          } 
+        ]
+      }
     ]
   }
 }

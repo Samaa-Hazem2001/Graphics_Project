@@ -7,9 +7,9 @@ namespace our {
 
     // This function should setup the pipeline state and set the shader to be used
     void Material::setup() const {
-        //TODO: (Req 7) Write this function
-        this->pipelineState.setup();
-        this->shader->use();
+        //TODO: (Req 6) Write this function
+        pipelineState.setup();
+        shader->use();
     }
 
     // This function read the material data from a json object
@@ -26,7 +26,7 @@ namespace our {
     // This function should call the setup of its parent and
     // set the "tint" uniform to the value in the member variable tint 
     void TintedMaterial::setup() const {
-        //TODO: (Req 7) Write this function
+        //TODO: (Req 6) Write this function
         Material::setup();
         shader->set("tint",tint);
     }
@@ -42,33 +42,30 @@ namespace our {
     // set the "alphaThreshold" uniform to the value in the member variable alphaThreshold
     // Then it should bind the texture and sampler to a texture unit and send the unit number to the uniform variable "tex" 
     void TexturedMaterial::setup() const {
-        //TODO: (Req 7) Write this function
+        //TODO: (Req 6) Write this function
         TintedMaterial::setup();
         shader->set("alphaThreshold",alphaThreshold);
-        
-        // check if texture and sampler exists
-        // to avoid problems if textured material is used without a texture
-        if(texture != NULL && sampler !=NULL){
-            glActiveTexture(GL_TEXTURE0); //we send it unit 0 
-            texture->bind();
-            sampler->bind(0);
-            shader->set("tex",0);
+        if(texture != NULL && sampler !=NULL)
+        {
+        glActiveTexture(GL_TEXTURE0); //we send it unit 0 
+        texture->bind();
+        sampler->bind(0);
+        shader->set("tex",0);
         }
-        
     }
 
     // This function read the material data from a json object
     void TexturedMaterial::deserialize(const nlohmann::json& data){
+
         TintedMaterial::deserialize(data);
         if(!data.is_object()) return;
         alphaThreshold = data.value("alphaThreshold", 0.0f);
         texture = AssetLoader<Texture2D>::get(data.value("texture", ""));
         sampler = AssetLoader<Sampler>::get(data.value("sampler", ""));
     }
-
     //------------ lit material -------------------
      void LitMaterial::setup() const {
-        Material::setup(); 
+        TexturedMaterial::setup(); 
         if (albedo ){
         glActiveTexture(GL_TEXTURE0);  
         albedo->bind();
@@ -99,12 +96,13 @@ namespace our {
         sampler->bind(4);
         shader->set("material.emissive",4);
         }
+        glActiveTexture(GL_TEXTURE0);
     }
 
     // This function read the material data from a json object
     void LitMaterial::deserialize(const nlohmann::json& data){
 
-        Material::deserialize(data); 
+        TexturedMaterial::deserialize(data); 
 
         if(!data.is_object()) return;
 
@@ -119,11 +117,11 @@ namespace our {
         }
         if(data.contains("roughness")){
            roughness = AssetLoader<Texture2D>::get(data.value("roughness", ""));
-
-           if(data.contains("emissive")){
+        }
+        if(data.contains("emissive")){
            emissive = AssetLoader<Texture2D>::get(data.value("emissive", ""));
         }
-        }
+        sampler = AssetLoader<Sampler>::get(data.value("sampler", ""));
 
     }
 
