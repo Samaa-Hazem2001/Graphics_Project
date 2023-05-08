@@ -24,7 +24,7 @@ namespace our {
     public:
         int lightType; // The type of the light
         // We also define the color & intensity of the light for each component of the Phong model (Ambient, Diffuse, Specular).
-        glm::vec3 diffuse, specular, ambient;
+        glm::vec3 diffuse, specular;
         glm::vec4 color;
         glm::vec3 attenuation; // x*d^2 + y*d + z
         glm::vec2 cone_angles; // x: inner_angle, y: outer_angle
