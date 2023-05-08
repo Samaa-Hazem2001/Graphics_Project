@@ -220,97 +220,7 @@
       // },
       {
         "rotation": [-90, 90, 0],
-        "position": [1, -1, -60],
-        // "position": [0,1 , -1],
-        "scale": [0.02, 0.03, 0.04],
-        "components": [
-          {
-            "type": "Mesh Renderer",
-            "mesh": "penalty",
-            "material": "penalty"
-          },
-          {
-            "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
-          }
-        ]
-      },
-      {
-        "rotation": [-90, 90, 0],
-        "position": [-1, -1, -80],
-        // "position": [0,1 , -1],
-        "scale": [0.02, 0.03, 0.04],
-        "components": [
-          {
-            "type": "Mesh Renderer",
-            "mesh": "penalty",
-            "material": "penalty"
-          },
-          {
-            "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
-          }
-        ]
-      },
-      {
-        "rotation": [-90, 90, 0],
-        "position": [0, -1, -100],
-        // "position": [0,1 , -1],
-        "scale": [0.02, 0.03, 0.04],
-        "components": [
-          {
-            "type": "Mesh Renderer",
-            "mesh": "penalty",
-            "material": "penalty"
-          },
-          {
-            "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
-          }
-        ]
-      },
-      {
-        "rotation": [-90, 90, 0],
-        "position": [-1, -1, -120],
-        // "position": [0,1 , -1],
-        "scale": [0.02, 0.03, 0.04],
-        "components": [
-          {
-            "type": "Mesh Renderer",
-            "mesh": "penalty",
-            "material": "penalty"
-          },
-          {
-            "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
-          }
-        ]
-      },
-      {
-        "rotation": [-90, 90, 0],
-        "position": [0, -1, -140],
-        // "position": [0,1 , -1],
-        "scale": [0.02, 0.03, 0.04],
-        "components": [
-          {
-            "type": "Mesh Renderer",
-            "mesh": "penalty",
-            "material": "penalty"
-          },
-          {
-            "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
-          }
-        ]
-      },
-      {
-        "rotation": [-90, 90, 0],
-        "position": [-1, -1, -1],
+        "position": [-3, -1, -1],
         // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
@@ -364,7 +274,118 @@
       },
       {
         "rotation": [-90, 90, 0],
-        "position": [1, -1, -60],
+        "position": [6, -1, -60],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      
+      {
+        "rotation": [-90, 90, 0],
+        "position": [3, -1, -60],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [4, -1, -65],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [-6, -1, -70],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      
+      {
+        "rotation": [-90, 90, 0],
+        "position": [-4, -1, -80],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [6, -1, -80],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      
+      {
+        "rotation": [-90, 90, 0],
+        "position": [2, -1, -100],
         // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
@@ -436,7 +457,61 @@
       },
       {
         "rotation": [-90, 90, 0],
-        "position": [0, -1, -140],
+        "position": [-4, -1, -130],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [6, -1, -140],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [-5, -1, -120],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [0, -1, -130],
         // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
@@ -454,7 +529,25 @@
       },
        {
         "rotation": [-90, 90, 0],
-        "position": [0, -1, -140],
+        "position": [5, -1, -140],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [-5, -1, -145],
         // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
@@ -473,7 +566,7 @@
       //----------------
       {
         "rotation": [-90, 90, 0],
-        "position": [-1, -1, -160],
+        "position": [-1, -1, -150],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -485,6 +578,46 @@
             "type": "Collision",
             "collisionType": "penalty"//,
             //"effect": 25
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [5, -1, -160],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [0, -1, -175],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
           },
           {
             "type": "Collision",
@@ -513,7 +646,79 @@
       },
       {
         "rotation": [-90, 90, 0],
-        "position": [0.5, -1, -200],
+        "position": [-6, -1, -180],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [6, -1, -190],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [6, -1, -195],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [-5, -1, -200],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [5, -1, -200],
         // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
@@ -549,7 +754,7 @@
       },
       {
         "rotation": [-90, 90, 0],
-        "position": [-1, -1, -220],
+        "position": [-6, -1, -210],
         // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
@@ -567,7 +772,7 @@
       },
       {
         "rotation": [-90, 90, 0],
-        "position": [0, -1, -240],
+        "position": [5, -1, -220],
         // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
@@ -585,7 +790,7 @@
       },
       {
         "rotation": [-90, 90, 0],
-        "position": [-1, -1, -280],
+        "position": [4, -1, -225],
         // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
@@ -603,7 +808,223 @@
       },
       {
         "rotation": [-90, 90, 0],
-        "position": [0, -1, -300],
+        "position": [-6, -1, -230],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [6, -1, -235],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [-3, -1, -240],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [3, -1, -240],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [6, -1, -245],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [0, -1, -250],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [5, -1, -260],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [0, -1, -265],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [3, -1, -270],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [5, -1, -275],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [5, -1, -280],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [-6, -1, -290],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [3, -1, -300],
         // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
@@ -622,7 +1043,8 @@
       // 2-----------
       {
         "rotation": [-90, 90, 0],
-        "position": [-1, -1, -320],
+        "position": [-3, -1, -310],
+        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -639,7 +1061,60 @@
       },
       {
         "rotation": [-90, 90, 0],
-        "position": [0, -1, -340],
+        "position": [-4, -1, -320],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [-4, -1, -330],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [4, -1, -340],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [0, -1, -350],
         // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
@@ -675,7 +1150,7 @@
       },
       {
         "rotation": [-90, 90, 0],
-        "position": [1, -1, -380],
+        "position": [0, -1, -365],
         // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
@@ -693,7 +1168,151 @@
       },
       {
         "rotation": [-90, 90, 0],
-        "position": [1, -1, -411],
+        "position": [3, -1, -370],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [-3, -1, -380],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [-3, -1, -380],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [3, -1, -385],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [6, -1, -390],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [-6, -1, -395],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [-6, -1, -395],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [6, -1, -395],
+        // "position": [0,1 , -1],
+        "scale": [0.02, 0.03, 0.04],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "penalty",
+            "material": "penalty"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "penalty"//,
+            //"effect": 25
+          }
+        ]
+      },
+      {
+        "rotation": [-90, 90, 0],
+        "position": [3, -1, -411],
         // "position": [0,1 , -1],
         "scale": [0.5, 0.5, 1],
         "components": [
@@ -704,7 +1323,8 @@
           }
         ]
       },
-      //--------------------- reward
+      //--------------------- rewards
+      // 1
       {
         "rotation": [-90, 45, 0],
         "position": [0.3, -1, -10],
@@ -736,7 +1356,7 @@
       },
       {
         "rotation": [-90, 45, 0],
-        "position": [0.5, -1, -15],
+        "position": [-2, -1, -20],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
@@ -821,7 +1441,36 @@
       },
       {
         "rotation": [-90, 45, 0],
-        "position": [1, -1, -45],
+        "position": [-1, -1, -45],
+        "scale": [0.2, 0.2, 0.3],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "reward",
+            "material": "reward"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "reward"//,
+            //"effect": 25
+          },
+          {
+            "type": "Movement",
+            "angularVelocity": [0, 90, 0]
+          }//,
+          // {
+          //   "type": "light",
+          //   "typeOfLight": "POINT",
+          //   "diffuse": [0.4, 1, 1],
+          //   "specular": [0.4, 1, 1],
+          //   "attenuation": [0.001, 0.001, 0.0001]
+          // }
+        ]
+      },
+      // 2
+      {
+        "rotation": [-90, 45, 0],
+        "position": [0, -1, -55],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
@@ -849,7 +1498,7 @@
       },
       {
         "rotation": [-90, 45, 0],
-        "position": [-1, -1, -55],
+        "position": [-4, -1, -70],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
@@ -877,7 +1526,7 @@
       },
       {
         "rotation": [-90, 45, 0],
-        "position": [1, -1, -70],
+        "position": [-3, -1, -85],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
@@ -905,7 +1554,7 @@
       },
       {
         "rotation": [-90, 45, 0],
-        "position": [-0.3, -1, -85],
+        "position": [-6, -1, -90],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
@@ -933,7 +1582,36 @@
       },
       {
         "rotation": [-90, 45, 0],
-        "position": [0.7, -1, -90],
+        "position": [6, -1, -105],
+        "scale": [0.2, 0.2, 0.3],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "reward",
+            "material": "reward"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "reward"//,
+            //"effect": 25
+          },
+          {
+            "type": "Movement",
+            "angularVelocity": [0, 90, 0]
+          }//,
+          // {
+          //   "type": "light",
+          //   "typeOfLight": "POINT",
+          //   "diffuse": [0.4, 1, 1],
+          //   "specular": [0.4, 1, 1],
+          //   "attenuation": [0.001, 0.001, 0.0001]
+          // }
+        ]
+      },
+      // 3
+      {
+        "rotation": [-90, 45, 0],
+        "position": [-4, -1, -115],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
@@ -961,7 +1639,7 @@
       },
       {
         "rotation": [-90, 45, 0],
-        "position": [0.7, -1, -105],
+        "position": [-3, -1, -125],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
@@ -989,7 +1667,7 @@
       },
       {
         "rotation": [-90, 45, 0],
-        "position": [-1, -1, -115],
+        "position": [4, -1, -150],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
@@ -1017,36 +1695,7 @@
       },
       {
         "rotation": [-90, 45, 0],
-        "position": [0, -1, -125],
-        "scale": [0.2, 0.2, 0.3],
-        "components": [
-          {
-            "type": "Mesh Renderer",
-            "mesh": "reward",
-            "material": "reward"
-          },
-          {
-            "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
-          },
-          {
-            "type": "Movement",
-            "angularVelocity": [0, 90, 0]
-          }//,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "POINT",
-          //   "diffuse": [0.4, 1, 1],
-          //   "specular": [0.4, 1, 1],
-          //   "attenuation": [0.001, 0.001, 0.0001]
-          // }
-        ]
-      },
-      //2---
-      {
-        "rotation": [-90, 45, 0],
-        "position": [0.3, -1, -150],
+        "position": [-2, -1, -160],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
@@ -1075,6 +1724,35 @@
       {
         "rotation": [-90, 45, 0],
         "position": [0.5, -1, -170],
+        "scale": [0.2, 0.2, 0.3],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "reward",
+            "material": "reward"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "reward"//,
+            //"effect": 25
+          },
+          {
+            "type": "Movement",
+            "angularVelocity": [0, 90, 0]
+          }//,
+          // {
+          //   "type": "light",
+          //   "typeOfLight": "POINT",
+          //   "diffuse": [0.4, 1, 1],
+          //   "specular": [0.4, 1, 1],
+          //   "attenuation": [0.001, 0.001, 0.0001]
+          // }
+        ]
+      },
+      // 4
+      {
+        "rotation": [-90, 45, 0],
+        "position": [5, -1, -180],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
@@ -1130,7 +1808,7 @@
       },
       {
         "rotation": [-90, 45, 0],
-        "position": [0.9, -1, -220],
+        "position": [-3, -1, -210],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
@@ -1158,7 +1836,7 @@
       },
       {
         "rotation": [-90, 45, 0],
-        "position": [1, -1, -230],
+        "position": [-3, -1, -230],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
@@ -1186,7 +1864,36 @@
       },
       {
         "rotation": [-90, 45, 0],
-        "position": [-1, -1, -250],
+        "position": [-5, -1, -240],
+        "scale": [0.2, 0.2, 0.3],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "reward",
+            "material": "reward"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "reward"//,
+            //"effect": 25
+          },
+          {
+            "type": "Movement",
+            "angularVelocity": [0, 90, 0]
+          }//,
+          // {
+          //   "type": "light",
+          //   "typeOfLight": "POINT",
+          //   "diffuse": [0.4, 1, 1],
+          //   "specular": [0.4, 1, 1],
+          //   "attenuation": [0.001, 0.001, 0.0001]
+          // }
+        ]
+      },
+      // 5
+      {
+        "rotation": [-90, 45, 0],
+        "position": [-3, -1, -250],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
@@ -1214,7 +1921,7 @@
       },
       {
         "rotation": [-90, 45, 0],
-        "position": [1, -1, -270],
+        "position": [-1, -1, -270],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
@@ -1242,7 +1949,7 @@
       },
       {
         "rotation": [-90, 45, 0],
-        "position": [-0.3, -1, -290],
+        "position": [2, -1, -290],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
@@ -1270,7 +1977,7 @@
       },
       {
         "rotation": [-90, 45, 0],
-        "position": [0.7, -1, -310],
+        "position": [0, -1, -300],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
@@ -1298,7 +2005,36 @@
       },
       {
         "rotation": [-90, 45, 0],
-        "position": [0.7, -1, -330],
+        "position": [5, -1, -310],
+        "scale": [0.2, 0.2, 0.3],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "reward",
+            "material": "reward"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "reward"//,
+            //"effect": 25
+          },
+          {
+            "type": "Movement",
+            "angularVelocity": [0, 90, 0]
+          }//,
+          // {
+          //   "type": "light",
+          //   "typeOfLight": "POINT",
+          //   "diffuse": [0.4, 1, 1],
+          //   "specular": [0.4, 1, 1],
+          //   "attenuation": [0.001, 0.001, 0.0001]
+          // }
+        ]
+      },
+      // 6
+      {
+        "rotation": [-90, 45, 0],
+        "position": [0, -1, -320],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
@@ -1326,7 +2062,7 @@
       },
       {
         "rotation": [-90, 45, 0],
-        "position": [-1, -1, -350],
+        "position": [0, -1, -340],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
@@ -1354,7 +2090,91 @@
       },
       {
         "rotation": [-90, 45, 0],
-        "position": [0, -1, -370],
+        "position": [0.7, -1, -355],
+        "scale": [0.2, 0.2, 0.3],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "reward",
+            "material": "reward"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "reward"//,
+            //"effect": 25
+          },
+          {
+            "type": "Movement",
+            "angularVelocity": [0, 90, 0]
+          }//,
+          // {
+          //   "type": "light",
+          //   "typeOfLight": "POINT",
+          //   "diffuse": [0.4, 1, 1],
+          //   "specular": [0.4, 1, 1],
+          //   "attenuation": [0.001, 0.001, 0.0001]
+          // }
+        ]
+      },
+      {
+        "rotation": [-90, 45, 0],
+        "position": [-2, -1, -360],
+        "scale": [0.2, 0.2, 0.3],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "reward",
+            "material": "reward"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "reward"//,
+            //"effect": 25
+          },
+          {
+            "type": "Movement",
+            "angularVelocity": [0, 90, 0]
+          }//,
+          // {
+          //   "type": "light",
+          //   "typeOfLight": "POINT",
+          //   "diffuse": [0.4, 1, 1],
+          //   "specular": [0.4, 1, 1],
+          //   "attenuation": [0.001, 0.001, 0.0001]
+          // }
+        ]
+      },
+      {
+        "rotation": [-90, 45, 0],
+        "position": [3, -1, -375],
+        "scale": [0.2, 0.2, 0.3],
+        "components": [
+          {
+            "type": "Mesh Renderer",
+            "mesh": "reward",
+            "material": "reward"
+          },
+          {
+            "type": "Collision",
+            "collisionType": "reward"//,
+            //"effect": 25
+          },
+          {
+            "type": "Movement",
+            "angularVelocity": [0, 90, 0]
+          }//,
+          // {
+          //   "type": "light",
+          //   "typeOfLight": "POINT",
+          //   "diffuse": [0.4, 1, 1],
+          //   "specular": [0.4, 1, 1],
+          //   "attenuation": [0.001, 0.001, 0.0001]
+          // }
+        ]
+      },
+      {
+        "rotation": [-90, 45, 0],
+        "position": [-3, -1, -385],
         "scale": [0.2, 0.2, 0.3],
         "components": [
           {
