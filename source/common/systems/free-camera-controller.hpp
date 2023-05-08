@@ -178,13 +178,13 @@ namespace our
             // make it move forward all the time
             position += front * (deltaTime * current_sensitivity.z);
             
-            if (position.x < 2.35222)
+            if (position.x < 7.5)
             {
                 // D or left button moves the player left
                 if(app->getKeyboard().isPressed(GLFW_KEY_D)) position -= right * (deltaTime * current_sensitivity.x);
                 if (app->getKeyboard().isPressed(GLFW_KEY_RIGHT)) position -= right * (deltaTime * current_sensitivity.x);
             }
-            if (position.x > -2.35222)
+            if (position.x > -7.5)
             {
                 // A or right button moves the player right
                 if(app->getKeyboard().isPressed(GLFW_KEY_A)) position += right * (deltaTime * current_sensitivity.x);
