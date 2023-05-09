@@ -1,6 +1,6 @@
 #version 330
 
-#define MAX_LIGHTS 16
+#define MAX_LIGHTS 40
 
 #define DIRECTIONAL 0
 #define POINT 1
