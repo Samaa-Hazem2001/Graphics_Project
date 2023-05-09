@@ -3,6 +3,7 @@
 #include "../ecs/entity.hpp"
 #include "camera.hpp"
 #include "mesh-renderer.hpp"
+#include "light.hpp"
 #include "free-camera-controller.hpp"
 #include "movement.hpp"
 #include "running-object.hpp"
@@ -24,7 +25,12 @@ namespace our {
             component = entity->addComponent<MovementComponent>();
             // hecking whether a given variable "type" is equal to the ID of a MeshRendererComponent, 
             // and if so, creating a new instance of the component and assigning it to the variable "component" of the entity.
-        } else if (type == MeshRendererComponent::getID()) {
+        } 
+        else if(type == LightComponent::getID()){
+            component = entity->addComponent<LightComponent>();
+        }
+        
+        else if (type == MeshRendererComponent::getID()) {
             component = entity->addComponent<MeshRendererComponent>();
         } else if (type == RunningObject::getID()) {
             component = entity->addComponent<RunningObject>();

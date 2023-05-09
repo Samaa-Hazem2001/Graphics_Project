@@ -1363,7 +1363,7 @@
             "typeOfLight": "POINT",
             "diffuse": [1, 1, 1],
             "specular": [0.4, 1, 1],
-            "attenuation": [0.01, 0.01, 0.01],
+            "attenuation": [0.1, 0.1, 0.1],
             "color": [0, 0, 1, 1]
           }
         ]
@@ -1393,7 +1393,7 @@
             "typeOfLight": "POINT",
             "diffuse": [0.4, 1, 1],
             "specular": [0.4, 1, 1],
-            "attenuation": [0.001, 0.001, 0.0001],
+            "attenuation": [0.1, 0.1, 0.1],
             "color": [0, 0, 1, 1]
           }
         ]
