@@ -12,13 +12,10 @@ namespace our {
     // For a more complex example of how to use the ECS framework, see "free-camera-controller.hpp"
     class RunningObject : public Component {
     public:
-        // glm::vec3 linearVelocity = {0, 0, 0}; // Each frame, the entity should move as follows: position += linearVelocity * deltaTime 
-        // glm::vec3 angularVelocity = {0, 0, 0}; // Each frame, the entity should rotate as follows: rotation += angularVelocity * deltaTime
 
-        // The ID of this component type is "Movement"
+        // The ID of this component type is "RunningObject"
         static std::string getID() { return "RunningObject"; }
 
-        // Reads linearVelocity & angularVelocity from the given json object
         void deserialize(const nlohmann::json& data) override;
     };
 

@@ -636,15 +636,4 @@ void our::Application::setupCallbacks() {
             if(app->currentState) app->currentState->onMouseButtonEvent(button, action, mods);
         }
     });
-
-    // later
-    // don't need scroll now
-    // mouse scroll callbacks
-    // glfwSetScrollCallback(window, [](GLFWwindow* window, double x_offset, double y_offset){
-    //     auto* app = static_cast<Application*>(glfwGetWindowUserPointer(window));
-    //     if(app){
-    //         app->getMouse().ScrollEvent(x_offset, y_offset);
-    //         if(app->currentState) app->currentState->onScrollEvent(x_offset, y_offset);
-    //     }
-    // });
 }

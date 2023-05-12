@@ -17,19 +17,18 @@ namespace our {
         std::string type = data.value("type", "");
         Component* component = nullptr;
         //TODO: (Req 8) Add an option to deserialize a "MeshRendererComponent" to the following if-else statement
+        // checking whether a given variable "type" is equal to the ID of a MeshRendererComponent, 
+        // and if so, creating a new instance of the component and assigning it to the variable "component" of the entity.
         if(type == CameraComponent::getID()){
             component = entity->addComponent<CameraComponent>();
         } else if (type == FreeCameraControllerComponent::getID()) {
             component = entity->addComponent<FreeCameraControllerComponent>();
         } else if (type == MovementComponent::getID()) {
             component = entity->addComponent<MovementComponent>();
-            // hecking whether a given variable "type" is equal to the ID of a MeshRendererComponent, 
-            // and if so, creating a new instance of the component and assigning it to the variable "component" of the entity.
         } 
         else if(type == LightComponent::getID()){
             component = entity->addComponent<LightComponent>();
         }
-        
         else if (type == MeshRendererComponent::getID()) {
             component = entity->addComponent<MeshRendererComponent>();
         } else if (type == RunningObject::getID()) {

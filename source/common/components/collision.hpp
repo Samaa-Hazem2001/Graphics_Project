@@ -13,13 +13,11 @@ namespace our {
     // For a more complex example of how to use the ECS framework, see "free-camera-controller.hpp"
     class CollisionComponent : public Component {
     public:
-        // int effect = 50;
         std::string collisionType = "";
         // The ID of this component type is "Collision"
         static std::string getID() { return "Collision"; }
         std::string getCollisionType() { return this->collisionType; }
 
-        // Reads linearVelocity & angularVelocity from the given json object
         void deserialize(const nlohmann::json& data) override;
     };
 
