@@ -41,31 +41,6 @@
   - Winning:
 ![Capture2](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/1c96a5e7-ff5d-4def-a2f6-dd059ad7917e)
 
-<p>
-  you need to use anacond to run the notebook 
-  Installation:
-<h6>On Windows: Just install Anaconda. </h6>
-<a href="https://docs.anaconda.com/anaconda/install/windows/">https://docs.anaconda.com/anaconda/install/windows/</a>
-<h6>On Linux:</h6>
-<a href="https://docs.anaconda.com/anaconda/install/linux/">https://docs.anaconda.com/anaconda/install/linux/</a>
-<h6>Verify installation:</h6>
-<a href="https://docs.anaconda.com/anaconda/install/verify-install/">https://docs.anaconda.com/anaconda/install/verify-install/ </a>
-
-  <hr>
-  <h6>install opencv on anaconda </h6>
-  <p>from anaconda prompt write this comands </p>
-  <ul>
-  <li>conda update anaconda-navigator </li>
-  <li>conda update navigator-updater </li>
-  
-   <li>pip install opencv-python </li>
-   </ul>
-
-  <h2>How to run  </h2>
-    
-    you can run the notebook that is called project.ipynp using vscode or using Jupyter Notebook but I prefer using vscode :)
-   <p> press q to exit the run</p>
-   
 ## Contributors <a name = "Contributors"></a>
 
 <table>
