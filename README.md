@@ -17,7 +17,6 @@
   - git clone https://github.com/asmaaadel0/Graphics_Project
 - Build the project
 - Run this Command
-- 
   - .\bin\GAME_APPLICATION.exe
 
 ## Technologies <a name = "technologies"></a>
