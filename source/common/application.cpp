@@ -213,6 +213,7 @@ int our::Application::run(int run_for_frames) {
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO();
 
+    // fonts we use in writing in game window
     ImFont *font = io.Fonts->AddFontFromFileTTF("assets\\fonts\\Ruda-Bold.ttf", 30.0f);
     ImFont *fontBlopy = io.Fonts->AddFontFromFileTTF("assets\\fonts\\fontBlopy.ttf", 60.0f);
     ImFont *fontGameOver = io.Fonts->AddFontFromFileTTF("assets\\fonts\\game-over.ttf", 100.0f);
@@ -268,80 +269,111 @@ int our::Application::run(int run_for_frames) {
 
         if(currentState) currentState->onImmediateGui(); // Call to run any required Immediate GUI.
 
-
+        // if the state is menu state:
         if (currentState == states["menu"])
         {
-            ImGui::SetNextWindowSize(ImVec2(700, 500));
-            ImGui::SetWindowPos("Main menu", ImVec2(300, 120));
+            // set window size of the menu
+            ImGui::SetNextWindowSize(ImVec2(900, 700));
+            // set the position of the menu
+            ImGui::SetWindowPos("Main menu", ImVec2(200, 10));
+            // start window GUI
             ImGui::Begin("Main menu", nullptr,ImGuiWindowFlags_NoMove);
 
 
             ImGuiStyle *style = &ImGui::GetStyle();
             style->WindowMenuButtonPosition = ImGuiDir_None;
             ImVec4 *colors = style->Colors;
-            // later change
-            // rgb(149, 72, 100)
+
+            // set colors for button and 
             colors[ImGuiCol_Button] = ImVec4(149.0f / 256, 72.0f / 256, 100.0f/ 256, 1.0f);
-            // rgb(168, 89, 118)
             colors[ImGuiCol_ButtonActive] = ImVec4(168.0f / 256, 89.0f / 256, 118.0f/ 256, 1.0f);
             colors[ImGuiCol_ButtonHovered] = ImVec4(168.0f / 256, 89.0f / 256, 118.0f/ 256, 1.0f);
             colors[ImGuiCol_WindowBg] = ImVec4(0.0f, 0.0f, 0.0f, 0.6f);
             colors[ImGuiCol_TitleBg] = ImVec4(0.0f / 256, 0.0f / 256, 255.0f, 1.0f);
             colors[ImGuiCol_TitleBgActive] = ImVec4(168.0f / 256, 89.0f / 256, 118.0f/ 256, 1.0f);
-            colors[ImGuiCol_TitleBgCollapsed] = ImVec4(168.0f / 256, 89.0f / 256, 118.0f/ 256, 1.0f);
-            colors[ImGuiCol_ResizeGrip] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
-            colors[ImGuiCol_ResizeGripActive] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
-            colors[ImGuiCol_ResizeGripHovered] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+            // colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+            colors[ImGuiCol_ResizeGrip] = ImVec4(149.0f / 256, 72.0f / 256, 100.0f/ 256, 1.0f);
+            colors[ImGuiCol_ResizeGripActive] = ImVec4(149.0f / 256, 72.0f / 256, 100.0f/ 256, 1.0f);
+            colors[ImGuiCol_ResizeGripHovered] = ImVec4(149.0f / 256, 72.0f / 256, 100.0f/ 256, 1.0f);
 
-            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Way To Home").x) * 0.3);
+            // set cursor position of (x, y) to write "Way To Home" in the center of the window
+            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Way To Home").x) * 0.35);
             ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("Way To Home").y) * 0.2);
 
+            // set font for writing the title
             ImGui::PushFont(fontBlopy);
+            // write the title
             ImGui::Text("Way To Home");
+            // pop the font after writing
             ImGui::PopFont();
 
+            // set font for writing "Start" and "Exit" in buttons
             ImGui::PushFont(font);
+
+            // set cursor position of (x, y) to write "Start" in the left of the window
             ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Start").x) * 0.2);
             ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("Start").y) * 0.5);
 
+            // if button for Start pressed:
             if (ImGui::Button("Start", ImVec2(200, 100)))
             {
+                // calculate the current time and make it our start the time
                 time(&start_time);
+                // play sound for starting the game
                 PlaySound("assets/sound/start.wav", NULL, SND_ASYNC);
+                // change the state to play state
                 changeState("play");
             }
 
+            // set cursor position of (x, y) to write "Exit" in the right of the window
             ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Exit").x) * 0.6);
             ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("Exit").y) * 0.5);
 
+            // if button for Exit pressed:
             if (ImGui::Button("Exit", ImVec2(200, 100)))
-
             {
+                // end the play
                 return 0; 
             }
+            // pop the font after writing
             ImGui::PopFont();
+            // end the GUI
             ImGui::End();
         }
 
+        // if the state is play state:
         else if (currentState == states["play"])
         {
+            // calculate the current time and make it our end time
             time(&end_time);
-            // if (penalty)
+            // our implementation that the game time is 60 second
+            // if the difference between start and end is 60, then the game is finished
+            // if the player hit the penalty, then the game is finished also
             if (abs(start_time - end_time) >= 60 || penalty){
+                // if game finished with penalty:
                 if(penalty)
+                    // play sound for game over
                     PlaySound("assets/sound/loser.wav", NULL, SND_ASYNC);
+                // if the game finished after 60 second:    
                 else
+                    // play sound for winning
                     PlaySound("assets/sound/winner.wav", NULL, SND_ASYNC);
+                // for both scenarios we change the state to gameOver state 
                 changeState("gameOver");
             }
 
+            // set the window size for the game
             ImGui::SetNextWindowSize(ImVec2(1280, 200));
+            // start window GUI
             ImGui::Begin(" ", nullptr, ImGuiWindowFlags_NoMove);
+            // set the position of the game
             ImGui::SetWindowPos(" ", ImVec2(0, 0));
 
             ImGuiStyle *style = &ImGui::GetStyle();
 
             ImVec4 *colors = style->Colors;
+
+            // set the color for window background
             colors[ImGuiCol_WindowBg] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
             colors[ImGuiCol_Border] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
             colors[ImGuiCol_ResizeGrip] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
@@ -351,104 +383,118 @@ int our::Application::run(int run_for_frames) {
             colors[ImGuiCol_TitleBgActive] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
             colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
 
-            // ImGui::PushFont(font);
-            // ImGui::SetCursorPosX(0);
-
-            // std::string t1 = "00:";
-            // int time = 60 - abs(start_time - end_time);
-            // std::string t2 = std::to_string(int(time));
-            // std::string countdown;
-
-            // if (10 - time > 0)
-                // countdown = t1 + "0" + t2;
-            // else
-                // countdown = t1 + t2;
-            // ImGui::Text(countdown.c_str());
-            // ImGui::PopFont();
-
+            // set the cursor (x, y) to write number of rewards
             ImGui::SetCursorPosX(960);
             ImGui::SetCursorPosY(60);
             
-
+            // set the font to write rewards
             ImGui::PushFont(font);
-            std::string l1 = "REWARD: ";
-            std::string l2 = std::to_string(reward);
-            std::string totalLine = l1 + l2;
-            ImGui::Text(totalLine.c_str());
+            // first string for word "REWARD: "
+            std::string string1 = "REWARD: ";
+            // second string for the number of rewards
+            std::string string2 = std::to_string(reward);
+            // concatenate both strings
+            std::string stringLine = string1 + string2;
+            // write it in GUI
+            ImGui::Text(stringLine.c_str());
+            // pop the font after writing
             ImGui::PopFont();
 
             // ImGui::SetCursorPosX(960);
             // ImGui::SetCursorPosY(40);
             
-
             // ImGui::PushFont(font);
-            // std::string l3 = "LIVE: ";
-            // std::string l4 = std::to_string(penalty);
-            // std::string totalLine2 = l3 + l4;
-            // ImGui::Text(totalLine2.c_str());
+            // std::string string3 = "LIVE: ";
+            // std::string string4 = std::to_string(penalty);
+            // std::string stringLine = string3 + string4;
+            // ImGui::Text(stringLine.c_str());
             // ImGui::PopFont();
-
+            
+            // end the GUI
             ImGui::End();
         }
-
+        
+        // if the state is "Losing" or "Winnig" state:
         else
         {
-
+            // set the window size for the "Losing" or "Winnig"
             ImGui::SetNextWindowSize(ImVec2(1000, 1000));
+            // start window GUI
             ImGui::Begin(" ", nullptr, ImGuiWindowFlags_NoMove);
+            // set the position of the "Losing" or "Winnig"
             ImGui::SetWindowPos(" ", ImVec2(150, -150));
 
             ImGuiStyle *style = &ImGui::GetStyle();
             ImVec4 *colors = style->Colors;
+            // set color for window background 
             colors[ImGuiCol_WindowBg] = ImVec4(0.0f, 0.0f, 0.0f, 0.6f);
+            // set the window size for the "Losing" or "Winnig"
             ImGui::SetNextWindowSize(ImVec2(1500, 100));
+
+            // set the position of (x, y) for writing "GAME OVER" in the center of the window
             ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("GAME OVER").x) * 0.2);
             ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("GAME OVER").y) * 0.2);
+            // set the font for writing "GAME OVER"
             ImGui::PushFont(fontGameOver);
+            // if the game ended with penalty:
             if (penalty)
+                // we write "GAME OVER" in the middle of the window
                 ImGui::Text("GAME OVER");
             else
+            // else if the user is the winner
             {
+                 // set the position of (x, y) for writing "GOOD JOB!" in the center of the window
                 ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("GOOD JOB!").x) * 0.5);
                 ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("GOOD JOB!").y) * 0.2);
+                // we write "GAME OVER" in the middle of the window
                 ImGui::Text("GOOD JOB!");
             }
+            // pop the font after writing
             ImGui::PopFont();
 
+             // set the position of (x, y) for writing "REWARD: " in the center of the window
             ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("GAME OVER").x) * 0.4);
             ImGui::PushFont(fontItalic);
-            std::string l1 = "REWARD: ";
-            std::string l2 = std::to_string(reward);
-            std::string totalLine = l1 + l2;
-            ImGui::Text(totalLine.c_str());
+            // write the "REWARD: " and the number of rewards
+            std::string string1 = "REWARD: ";
+            std::string string2 = std::to_string(reward);
+            std::string stringLine = string1 + string2;
+            ImGui::Text(stringLine.c_str());
 
+            // pop the font after writing
             ImGui::PopFont();
 
+            // set the cursor (x, y) to write "Restart" at the left of window
             ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Restart").x) * 0.3);
             ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("Restart").y) * 0.5);
             
-
+            // if the button of "Restart" pressed:
             if (ImGui::Button("Restart", ImVec2(200, 100)))
             {
+                // calculate the current time and make it our start the time
                 time(&start_time);
+                // set penalty to false
                 penalty = false;
+                // set reward to 0
                 reward = 0;
+                // change the state to play state
                 registerState<Playstate>("play");
-                PlaySound("assets/sound/start.wav", NULL, SND_ASYNC);
                 changeState("play");
+                // play sound for starting the game
+                PlaySound("assets/sound/start.wav", NULL, SND_ASYNC);
             }
 
-
-
+            // set the cursor (x, y) to write "Exit" at the right of window
             ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize("Exit").x) * 0.6);
             ImGui::SetCursorPosY((ImGui::GetWindowSize().y - ImGui::CalcTextSize("Exit").y) * 0.5);
 
-
+            // if the button of "Exit" pressed:
             if (ImGui::Button("Exit", ImVec2(200, 100)))
-
             {
+                // end the play
                 return 0;
             }
+            // end the GUI
             ImGui::End();
         }
 
@@ -591,6 +637,7 @@ void our::Application::setupCallbacks() {
         }
     });
 
+    // later
     // don't need scroll now
     // mouse scroll callbacks
     // glfwSetScrollCallback(window, [](GLFWwindow* window, double x_offset, double y_offset){
