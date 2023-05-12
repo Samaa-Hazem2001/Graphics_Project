@@ -1,6 +1,5 @@
 ## 📝 Table of Contents
 
-- [📝 Table of Contents](#-table-of-contents)
 - [About ](#about-)
 - [Project setup ](#project-setup-)
 - [Technologies ](#technologies-)
