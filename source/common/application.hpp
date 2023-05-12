@@ -77,7 +77,9 @@ namespace our {
 
         // Create an application with following configuration
         Application(const nlohmann::json& app_config) : app_config(app_config) {
+            // set the reward to 0
             reward = 0;
+            // set the penalty to false
             penalty = false;
         }
         // On destruction, delete all the states
