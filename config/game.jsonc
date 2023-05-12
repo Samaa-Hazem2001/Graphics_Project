@@ -37,7 +37,7 @@
         "white": "assets/textures/white.png",
         "black": "assets/textures/black.png",
         "galaxy_gradient": "assets/textures/galaxy_gradient.jpg",
-        "home":"assets/textures/home_sponge.png"
+        "home":"assets/textures/grass_home.jpg"
       },
       "meshes": {
         "plane": "assets/models/plane.obj",
@@ -45,7 +45,7 @@
         "floor": "assets/models/floor.obj",
         "penalty": "assets/models/penalty.obj",
         "reward": "assets/models/reward.obj",
-        "home": "assets/models/KrustyKrab.obj"
+        "home": "assets/models/grass_home.obj"
       },
       "samplers": {
         "default": {},
@@ -181,6 +181,7 @@
           {
             "position": [0, 2.5, -5],
             "rotation": [-15, 180, -2],
+            "scale": [3.0, 2.0, 10.0],
             "components": [
               {
                 "type": "Camera"
@@ -1326,9 +1327,9 @@
       },
       {
         "rotation": [-90, 90, 0],
-        "position": [3, -1, -411],
+        "position": [0, -1, -402],
         // "position": [0,1 , -1],
-        "scale": [0.5, 0.5, 1],
+        "scale": [0.03, 0.06, 0.05],
         "components": [
           {
             "type": "Mesh Renderer",
