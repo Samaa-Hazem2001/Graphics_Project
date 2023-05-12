@@ -33,13 +33,15 @@
 ## Screen Vedio <a name = "screen-video"></a>
 
 ## Screenshots <a name = "screen-shots"></a>
-- Menu State
+- ### Menu State:
+![image](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/7a4dda37-86ca-44b7-b88c-3234e311564b)
 
-- Ending State:
+- ### Ending State:
   - Game Over:
-
+![Capture3](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/a1ec7a17-cafa-4cdc-a3f2-b399ca850f46)
 
   - Winning:
+![Capture2](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/1c96a5e7-ff5d-4def-a2f6-dd059ad7917e)
 
 <p>
   you need to use anacond to run the notebook 
