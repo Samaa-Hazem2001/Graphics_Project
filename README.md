@@ -9,7 +9,7 @@
 - [Contributors ](#contributors-)
 
 ## About <a name = "about"></a>
-- This is a simple delivery game where the player acts as a duck responsible for picking up packages and delivering them to the delivery zones. 
+- This is a simple delivery game where the player acts as a duck responsible for picking up ducks to reach the home. 
 - Go left and right to avoid hitting corcodile, or you will die.
 - Try to move duck and collect small ducks on the sea as much as you can, to get more rewards.
 ## Project setup <a name = "Project-setup"></a>
