@@ -29,7 +29,7 @@
         }
       },
       "textures": {
-        "RunningObject": "assets/textures/snail7.png",
+        "RunningObject": "assets/textures/duck.jpg",
         "floor": "assets/textures/sea.jpeg",
         "penalty": "assets/textures/penalty.jpg",
         "reward": "assets/textures/reward.jpg",
@@ -41,7 +41,7 @@
       },
       "meshes": {
         "plane": "assets/models/plane.obj",
-        "RunningObject": "assets/models/gray_snail.obj",
+        "RunningObject": "assets/models/duck.obj",
         "floor": "assets/models/floor.obj",
         "penalty": "assets/models/penalty.obj",
         "reward": "assets/models/reward.obj",
@@ -145,49 +145,59 @@
     },
     "world": [
       {
-        "position": [0, -1, 20],
-        "rotation": [0, 180, 0],
-        "scale": [3.0, 2.0, 1.0],
+        "position": [0, 4, -5],
+        // "rotation": [-15, 180, -2],
+        //"scale": [0.2, 0.2, 0.3],
+        "rotation": [0, 0, 0],
+        // "scale": [3.0, 2.0, 1.0],
         "components": [
           {
-            "type": "RunningObject"
+            "type": "Camera"
           },
           {
-            "type": "Mesh Renderer",
-            "mesh": "RunningObject",
-            "material": "RunningObject"
-          },
+            "type": "Free Camera Controller"
+          }
+          ,
           {
             "type": "Movement",
             "linearVelocity": [0, 0, -10]
           }
-          // ,
-          // {
-          //   "type": "light",
-          //   "typeOfLight": "DIRECTIONAL",
-          //   "diffuse": [0, 1, 0],
-          //   "specular": [0, 1, 0]
-          // }
-          ,
-          {
-            "type": "light",
-            "typeOfLight": "POINT",
-            "diffuse": [1, 1, 1],
-            "specular": [1, 1, 1],
-            "attenuation": [0.1, 0.1, 0.1]
-          }
+          
         ],
+
         "children": [
           {
-            "position": [0, 2.5, -5],
-            "rotation": [-15, 180, -2],
-            "scale": [3.0, 2.0, 10.0],
+            "position": [0, -6, -6],
+            // "rotation": [0, 180, 0],
+            "rotation": [-90, 180, 0],
+            "scale": [0.05, 0.02, 0.05],
             "components": [
               {
-                "type": "Camera"
+                "type": "RunningObject"
               },
               {
-                "type": "Free Camera Controller"
+                "type": "Mesh Renderer",
+                "mesh": "RunningObject",
+                "material": "RunningObject"
+              },
+              // {
+              //   "type": "Movement",
+              //   "linearVelocity": [0, 0, -13]
+              // }
+              // ,
+              // // {
+              // //   "type": "light",
+              // //   "typeOfLight": "DIRECTIONAL",
+              // //   "diffuse": [0, 1, 0],
+              // //   "specular": [0, 1, 0]
+              // // }
+              // ,
+              {
+                "type": "light",
+                "typeOfLight": "POINT",
+                "diffuse": [1, 1, 1],
+                "specular": [1, 1, 1],
+                "attenuation": [0.1, 0.1, 0.1]
               }
             ]
           }
@@ -227,60 +237,60 @@
       //   ]
       // },
       // 1
-      {
-        "rotation": [-90, 90, 0],
-        "position": [-3, -1, -1],
-        // "position": [0,1 , -1],
-        "scale": [0.02, 0.03, 0.04],
-        "components": [
-          {
-            "type": "Mesh Renderer",
-            "mesh": "penalty",
-            "material": "penalty"
-          },
-          {
-            "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
-          }
-        ]
-      },
-      {
-        "rotation": [-90, 90, 0],
-        "position": [0, -1, -20],
-        // "position": [0,1 , -1],
-        "scale": [0.02, 0.03, 0.04],
-        "components": [
-          {
-            "type": "Mesh Renderer",
-            "mesh": "penalty",
-            "material": "penalty"
-          },
-          {
-            "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
-          }
-        ]
-      },
-      {
-        "rotation": [-90, 90, 0],
-        "position": [0.5, -1, -40],
-        // "position": [0,1 , -1],
-        "scale": [0.02, 0.03, 0.04],
-        "components": [
-          {
-            "type": "Mesh Renderer",
-            "mesh": "penalty",
-            "material": "penalty"
-          },
-          {
-            "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
-          }
-        ]
-      },
+      // {
+      //   "rotation": [-90, 90, 0],
+      //   "position": [-3, -1, -1],
+      //   // "position": [0,1 , -1],
+      //   "scale": [0.02, 0.03, 0.04],
+      //   "components": [
+      //     {
+      //       "type": "Mesh Renderer",
+      //       "mesh": "penalty",
+      //       "material": "penalty"
+      //     },
+      //     {
+      //       "type": "Collision",
+      //       "collisionType": "penalty"//,
+      //       //"effect": 25
+      //     }
+      //   ]
+      // },
+      // {
+      //   "rotation": [-90, 90, 0],
+      //   "position": [0, -1, -20],
+      //   // "position": [0,1 , -1],
+      //   "scale": [0.02, 0.03, 0.04],
+      //   "components": [
+      //     {
+      //       "type": "Mesh Renderer",
+      //       "mesh": "penalty",
+      //       "material": "penalty"
+      //     },
+      //     {
+      //       "type": "Collision",
+      //       "collisionType": "penalty"//,
+      //       //"effect": 25
+      //     }
+      //   ]
+      // },
+      // {
+      //   "rotation": [-90, 90, 0],
+      //   "position": [0.5, -1, -40],
+      //   // "position": [0,1 , -1],
+      //   "scale": [0.02, 0.03, 0.04],
+      //   "components": [
+      //     {
+      //       "type": "Mesh Renderer",
+      //       "mesh": "penalty",
+      //       "material": "penalty"
+      //     },
+      //     {
+      //       "type": "Collision",
+      //       "collisionType": "penalty"//,
+      //       //"effect": 25
+      //     }
+      //   ]
+      // },
       {
         "rotation": [-90, 90, 0],
         "position": [6, -1, -60],
@@ -1327,7 +1337,7 @@
       },
       {
         "rotation": [-90, 90, 0],
-        "position": [0, -1, -402],
+        "position": [0, -1, -410],
         // "position": [0,1 , -1],
         "scale": [0.03, 0.06, 0.05],
         "components": [

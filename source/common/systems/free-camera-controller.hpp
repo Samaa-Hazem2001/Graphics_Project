@@ -63,7 +63,8 @@ namespace our
             if(!(running)) return;
             // Get the entity that we found via getOwner of RunningObject (we could use controller->getOwner())
 
-            Entity* entity = running->getOwner();
+            Entity* entity = camera->getOwner();
+            // Entity* entity = running->getOwner();
 
             // If the left mouse button is pressed, we lock and hide the mouse. This common in First Person Games.
             if(app->getMouse().isPressed(GLFW_MOUSE_BUTTON_1) && !mouse_locked){
@@ -98,24 +99,29 @@ namespace our
 
                 // collisionX that refer to if there is a collision in x axis
                 bool collisionX = false;
-
+                 // collisionZ that refer to if there is a collision in y axis
+                bool collisionZ = false;
                 // if collision type is penalty:
                 if (Collision->getCollisionType() == "penalty")
                 {
                     // check if it's hit it or not and store it in collisionX
-                    collisionX = position.x + 1.5 >= collisionPosition.x &&
-                                 collisionPosition.x + 1.5 >= position.x;
+                    collisionX = position.x + 0.2 >= collisionPosition.x &&
+                                 collisionPosition.x + 0.2 >= position.x;
+
+                    collisionZ = position.z + 2 >= collisionPosition.z &&
+                                  collisionPosition.z + 2 >= position.z;
                 }
                 // if collision type is reward:
                 else
                 {
                     // check if it's hit it or not and store it in collisionX
-                    collisionX = position.x + 1 >= collisionPosition.x &&
-                                 collisionPosition.x + 1 >= position.x;
+                    collisionX = position.x + 1.5 >= collisionPosition.x &&
+                                 collisionPosition.x + 1.5 >= position.x;
+
+                    collisionZ = position.z + 6 >= collisionPosition.z &&
+                                  collisionPosition.z + 6 >= position.z;
                 }
-                // collisionZ that refer to if there is a collision in y axis
-                bool collisionZ = position.z + 1.0 >= collisionPosition.z &&
-                                  collisionPosition.z + 1.0 >= position.z;
+               
 
                 // if there is collision in both x, y axies
                 if (collisionX && collisionZ)
@@ -165,17 +171,17 @@ namespace our
             // make it move forward all the time
             position += front * (deltaTime * current_sensitivity.z);
             
-            if (position.x < 7.5)
+            if (position.x < 7)
             {
                 // D or left button moves the player left
-                if(app->getKeyboard().isPressed(GLFW_KEY_D)) position -= right * (deltaTime * current_sensitivity.x);
-                if (app->getKeyboard().isPressed(GLFW_KEY_RIGHT)) position -= right * (deltaTime * current_sensitivity.x);
+                if(app->getKeyboard().isPressed(GLFW_KEY_D)) position += right * (deltaTime * current_sensitivity.x);
+                if (app->getKeyboard().isPressed(GLFW_KEY_RIGHT)) position += right * (deltaTime * current_sensitivity.x);
             }
-            if (position.x > -7.5)
+            if (position.x > -7)
             {
                 // A or right button moves the player right
-                if(app->getKeyboard().isPressed(GLFW_KEY_A)) position += right * (deltaTime * current_sensitivity.x);
-                if (app->getKeyboard().isPressed(GLFW_KEY_LEFT)) position += right * (deltaTime * current_sensitivity.x);
+                if(app->getKeyboard().isPressed(GLFW_KEY_A)) position -= right * (deltaTime * current_sensitivity.x);
+                if (app->getKeyboard().isPressed(GLFW_KEY_LEFT)) position -= right * (deltaTime * current_sensitivity.x);
             }
            }
 

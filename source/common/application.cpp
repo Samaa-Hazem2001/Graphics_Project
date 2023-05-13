@@ -349,7 +349,7 @@ int our::Application::run(int run_for_frames) {
             // our implementation that the game time is 60 second
             // if the difference between start and end is 60, then the game is finished
             // if the player hit the penalty, then the game is finished also
-            if (abs(start_time - end_time) >= 60 || penalty){
+            if (abs(start_time - end_time) >= 31 || penalty){
                 // if game finished with penalty:
                 if(penalty)
                     // play sound for game over
