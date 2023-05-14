@@ -77,12 +77,16 @@ namespace our
             }
 
             // We get a reference to the entity's position and rotation
+            glm::vec3 world_position = entity->getLocalToWorldMatrix()*glm::vec4(0,0,0,1);
+            // glm::vec3 position = lightSources[i]->getOwner()->getLocalToWorldMatrix()*glm::vec4(0,0,0,1);
             glm::vec3& position = entity->localTransform.position;
             glm::vec3& rotation = entity->localTransform.rotation;
 
             // create instatse of CollisionComponent
             Entity *collisionEntity = nullptr;
             CollisionComponent *Collision = nullptr;
+
+
 
             // for loop for all intities in the world:
             for (auto entity : world->getEntities())
@@ -105,21 +109,21 @@ namespace our
                 if (Collision->getCollisionType() == "penalty")
                 {
                     // check if it's hit it or not and store it in collisionX
-                    collisionX = position.x + 0.2 >= collisionPosition.x &&
-                                 collisionPosition.x + 0.2 >= position.x;
+                    collisionX = world_position.x + 0.2 >= collisionPosition.x &&
+                                 collisionPosition.x + 0.2 >= world_position.x;
 
-                    collisionZ = position.z + 2 >= collisionPosition.z &&
-                                  collisionPosition.z + 2 >= position.z;
+                    collisionZ = world_position.z + 2 >= collisionPosition.z &&
+                                  collisionPosition.z + 2 >= world_position.z;
                 }
                 // if collision type is reward:
                 else
                 {
                     // check if it's hit it or not and store it in collisionX
-                    collisionX = position.x + 1.5 >= collisionPosition.x &&
-                                 collisionPosition.x + 1.5 >= position.x;
+                    collisionX = world_position.x + 1.5 >= collisionPosition.x &&
+                                 collisionPosition.x + 1.5 >= world_position.x;
 
-                    collisionZ = position.z + 6 >= collisionPosition.z &&
-                                  collisionPosition.z + 6 >= position.z;
+                    collisionZ = world_position.z + 6 >= collisionPosition.z &&
+                                  collisionPosition.z + 6 >= world_position.z;
                 }
                
 
