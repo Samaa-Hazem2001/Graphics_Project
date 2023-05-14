@@ -76,11 +76,10 @@ namespace our
                 mouse_locked = false;
             }
 
-            // We get a reference to the entity's position and rotation
+            // We get a reference to the entity's position
             glm::vec3 world_position = entity->getLocalToWorldMatrix()*glm::vec4(0,0,0,1);
             // glm::vec3 position = lightSources[i]->getOwner()->getLocalToWorldMatrix()*glm::vec4(0,0,0,1);
             glm::vec3& position = entity->localTransform.position;
-            glm::vec3& rotation = entity->localTransform.rotation;
 
             // create instatse of CollisionComponent
             Entity *collisionEntity = nullptr;
