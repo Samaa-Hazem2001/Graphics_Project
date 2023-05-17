@@ -32,14 +32,14 @@
 
 ## Screenshots <a name = "screen-shots"></a>
 - ### Menu State:
-![image](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/7a4dda37-86ca-44b7-b88c-3234e311564b)
+![first-menu](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/29161e0c-29db-497f-8266-b4ac09781d3f)
 
 - ### Ending State:
   - Game Over:
-![Capture3](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/a1ec7a17-cafa-4cdc-a3f2-b399ca850f46)
+![game-over](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/875b5afb-d9ae-4d73-9747-d8d2d4979c27)
 
   - Winning:
-![Capture2](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/1c96a5e7-ff5d-4def-a2f6-dd059ad7917e)
+![winning](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/3a163490-e850-4316-b78d-14336b1d88d5)
 
 ## Contributors <a name = "Contributors"></a>
 
