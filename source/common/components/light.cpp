@@ -12,29 +12,29 @@ namespace our
         if (!data.is_object())
             return;
 
-        lightTypeStr = data.value("typeOfLight", "DIRECTIONAL");
+        lightType = data.value("lightType", "DIRECTIONAL");
 
-        if (lightTypeStr == "DIRECTIONAL")
-            lightType = 0;
+        if (lightType == "DIRECTIONAL")
+            type = 0;
 
-        else if (lightTypeStr == "POINT")
-            lightType = 1;
+        else if (lightType == "POINT")
+            type = 1;
 
-        else if (lightTypeStr == "SPOT")
-            lightType =2;
+        else if (lightType == "SPOT")
+            type =2;
 
        
         diffuse = glm::vec3(data.value("diffuse", glm::vec3(1, 1, 1)));
         specular = glm::vec3(data.value("specular", glm::vec3(1, 1, 1)));
-        if (lightType != 0)
+        if (type != 0)
         {
         attenuation = glm::vec3(data.value("attenuation", glm::vec3(1, 0, 0)));
         }
 
-        if (lightType ==2)
+        if (type ==2)
         {  
-        cone_angles.x = glm::radians((float)data.value("cone_angles.in",10));
-        cone_angles.y = glm::radians((float)data.value("cone_angles.out",80));
+        coneAngles.x = glm::radians((float)data.value("coneAngles.in",10));
+        coneAngles.y = glm::radians((float)data.value("coneAngles.out",80));
         }
     }
     

@@ -13,7 +13,7 @@ struct Light {
     vec3 diffuse;
     vec3 specular;
     vec3 attenuation; // x*d^2 + y*d + z
-    vec2 cone_angles; // x: inner_angle, y: outer_angle
+    vec2 coneAngles; // x: inner_angle, y: outer_angle
 };
 
 uniform Light lights[MAX_LIGHTS];
@@ -85,7 +85,7 @@ void main(){
             attenuation /= dot(light.attenuation, vec3(d*d, d, 1));
             if(light.type == SPOT){
                 float angle = acos(dot(-direction_to_light, light.direction));
-                attenuation *= smoothstep(light.cone_angles.y, light.cone_angles.x, angle);
+                attenuation *= smoothstep(light.coneAngles.y, light.coneAngles.x, angle);
             }
         }
 

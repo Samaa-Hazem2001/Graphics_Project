@@ -299,19 +299,19 @@ Parameters
                 
                 for (int i = 0; i < (int)lightSources.size(); i++)
                 {
-                  if(lightSources[i]->lightType >=0){
+                  if(lightSources[i]->type >=0){
                       // calculate position and direction of the light source based on the object
                     glm::vec3 position = lightSources[i]->getOwner()->getLocalToWorldMatrix()*glm::vec4(0,0,0,1);
                     glm::vec3 direction = lightSources[i]->getOwner()->getLocalToWorldMatrix()*glm::vec4(0,-1,0,0);
                     
                     light_material->shader->set("lights[" + std::to_string(i) + "].direction",direction);
                     light_material->shader->set("lights[" + std::to_string(i) + "].color",lightSources[i]->color);
-                    light_material->shader->set("lights[" + std::to_string(i) + "].type", lightSources[i]->lightType);
+                    light_material->shader->set("lights[" + std::to_string(i) + "].type", lightSources[i]->type);
                     light_material->shader->set("lights[" + std::to_string(i) + "].position", position); 
                     light_material->shader->set("lights[" + std::to_string(i) + "].diffuse", lightSources[i]->diffuse);
                     light_material->shader->set("lights[" + std::to_string(i) + "].specular", lightSources[i]->specular);
                     light_material->shader->set("lights[" + std::to_string(i) + "].attenuation", lightSources[i]->attenuation);
-                    light_material->shader->set("lights[" + std::to_string(i) + "].cone_angles", lightSources[i]->cone_angles);
+                    light_material->shader->set("lights[" + std::to_string(i) + "].coneAngles", lightSources[i]->coneAngles);
                     
                 }}
             }
