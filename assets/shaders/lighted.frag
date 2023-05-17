@@ -2,8 +2,13 @@
 
 #define MAX_LIGHTS 64
 
+// set DIRECTIONAL to 0
 #define DIRECTIONAL 0
+
+// set POINT to 1
 #define POINT 1
+
+// set SPOT to 2
 #define SPOT 2
 
 struct Light {
@@ -13,7 +18,7 @@ struct Light {
     vec3 diffuse;
     vec3 specular;
     vec3 attenuation; // x*d^2 + y*d + z
-    vec2 coneAngles; // x: inner_angle, y: outer_angle
+    vec2 coneAngles; // x: inner angle, y: outer angle
 };
 
 uniform Light lights[MAX_LIGHTS];
