@@ -290,35 +290,51 @@ Parameters
             // if the material of the object is lighted
             if (auto light_material = dynamic_cast<LightMaterial *>(command.material); light_material)
             {
-                    
+                // set VP to VP matrix
                 light_material->shader->set("VP", VP);
+                // set M to command.localToWorld
                 light_material->shader->set("M", command.localToWorld);
+                // set eye to eye
                 light_material->shader->set("eye", eye);
+                // set M_IT to inverse(command.localToWorld)
                 light_material->shader->set("M_IT", glm::transpose(glm::inverse(command.localToWorld)));
+                // set light_count to size of lightSources
                 light_material->shader->set("light_count", (int)lightSources.size());
                 
+                // for loop for all light sources
                 for (int i = 0; i < (int)lightSources.size(); i++)
                 {
-                  if(lightSources[i]->type >=0){
-                      // calculate position and direction of the light source based on the object
+                    if(lightSources[i]->type >=0){
+
+                    // calculate position and direction of the light source based on the object
                     glm::vec3 position = lightSources[i]->getOwner()->getLocalToWorldMatrix()*glm::vec4(0,0,0,1);
                     glm::vec3 direction = lightSources[i]->getOwner()->getLocalToWorldMatrix()*glm::vec4(0,-1,0,0);
                     
+                    // set light material
+                    // set direction
                     light_material->shader->set("lights[" + std::to_string(i) + "].direction",direction);
+                    // set color
                     light_material->shader->set("lights[" + std::to_string(i) + "].color",lightSources[i]->color);
+                    // set type
                     light_material->shader->set("lights[" + std::to_string(i) + "].type", lightSources[i]->type);
+                    // set position
                     light_material->shader->set("lights[" + std::to_string(i) + "].position", position); 
+                    // set diffuse
                     light_material->shader->set("lights[" + std::to_string(i) + "].diffuse", lightSources[i]->diffuse);
+                    // set specular
                     light_material->shader->set("lights[" + std::to_string(i) + "].specular", lightSources[i]->specular);
+                    // set attenuation
                     light_material->shader->set("lights[" + std::to_string(i) + "].attenuation", lightSources[i]->attenuation);
+                    // set cone angles
                     light_material->shader->set("lights[" + std::to_string(i) + "].coneAngles", lightSources[i]->coneAngles);
                     
                 }}
             }
+            
+            // if the material of the isn't lighted
             else
-            {
-                 command.material->shader->set("transform", VP * command.localToWorld);
-            }
+                //set the "transform" uniform to be equal the model-view-projection matrix
+                command.material->shader->set("transform", VP * command.localToWorld);
                         
             command.mesh->draw();
         }
@@ -399,9 +415,7 @@ Parameters
         }
         // if  there is a light material apply it
         if (lightMaterial)
-        {
             lightMaterial->setup();
-        }
     }
 
 }
