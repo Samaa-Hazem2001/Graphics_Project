@@ -89,10 +89,11 @@
           "tint": [1, 1, 1, 1],
           "texture": "penalty",
           "sampler": "default"
+         
         },
         "floor": {
-          "type": "textured",
-          "shader": "textured",
+          "type": "lighted",
+          "shader": "lighted",
           "pipelineState": {
             "faceCulling": {
               "enabled": false
@@ -104,6 +105,12 @@
           "tint": [1, 1, 1, 1],
           "texture": "floor",
           "sampler": "default"
+          ,
+          "albedo": "floor",
+          "specular": "white",
+          "roughness": "galaxy_gradient", //gray
+          "emissive": "black",
+          "ambient_occlusion": "white"
         },
         "reward": {
           "type": "lighted",
@@ -147,7 +154,6 @@
       {
         "position": [0, 4, -5],
         // "rotation": [-15, 180, -2],
-        //"scale": [0.2, 0.2, 0.3],
         "rotation": [0, 0, 0],
         // "scale": [3.0, 2.0, 1.0],
         "components": [
@@ -168,7 +174,6 @@
         "children": [
           {
             "position": [0, -6, -6],
-            // "rotation": [0, 180, 0],
             "rotation": [-90, 180, 0],
             "scale": [0.05, 0.02, 0.05],
             "components": [
@@ -179,27 +184,27 @@
                 "type": "Mesh Renderer",
                 "mesh": "RunningObject",
                 "material": "RunningObject"
-              },
-              // {
-              //   "type": "Movement",
-              //   "linearVelocity": [0, 0, -13]
-              // }
-              // ,
-              // // {
-              // //   "type": "light",
-              // //   "typeOfLight": "DIRECTIONAL",
-              // //   "diffuse": [0, 1, 0],
-              // //   "specular": [0, 1, 0]
-              // // }
-              // ,
-              {
-                "type": "light",
-                "typeOfLight": "POINT",
-                "diffuse": [1, 1, 1],
-                "specular": [1, 1, 1],
-                "attenuation": [0.1, 0.1, 0.1]
               }
             ]
+            //,
+            // "children": [
+            //   {
+            //     "position": [0, 5, 0],
+            //     "rotation": [0, 0, 0],
+            //     // "scale": [0.05, 0.02, 0.05],
+            //     "components": [
+            //       {
+            //         "type": "light",
+            //         "typeOfLight": "SPOT",
+            //         "diffuse": [300, 400, 500],
+            //         "specular": [300, 400, 500],
+            //         "attenuation":[0, 1, 0],
+            //         "cone_angles.in": 0,
+            //         "cone_angles.out": 180
+            //       } 
+            //     ]
+            //   }
+            // ]
           }
         ]
       },
@@ -294,7 +299,6 @@
       {
         "rotation": [-90, 90, 0],
         "position": [6, -1, -60],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -304,15 +308,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },    
       {
         "rotation": [-90, 90, 0],
         "position": [3, -1, -60],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -322,8 +324,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
@@ -331,7 +332,6 @@
       {
         "rotation": [-90, 90, 0],
         "position": [4, -1, -65],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -341,15 +341,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [-6, -1, -70],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -359,15 +357,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },    
       {
         "rotation": [-90, 90, 0],
         "position": [-4, -1, -80],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -377,15 +373,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [6, -1, -80],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -395,15 +389,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },    
       {
         "rotation": [-90, 90, 0],
         "position": [2, -1, -100],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -413,8 +405,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
@@ -422,7 +413,6 @@
       {
         "rotation": [-90, 90, 0],
         "position": [-1, -1, -80],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -432,15 +422,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [0, -1, -100],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -450,15 +438,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [-1, -1, -120],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -468,15 +454,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [-4, -1, -130],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -486,15 +470,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [6, -1, -140],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -504,8 +486,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
@@ -513,7 +494,6 @@
       {
         "rotation": [-90, 90, 0],
         "position": [-5, -1, -120],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -523,15 +503,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [0, -1, -130],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -541,15 +519,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
        {
         "rotation": [-90, 90, 0],
         "position": [5, -1, -140],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -559,15 +535,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [-5, -1, -145],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -577,8 +551,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
@@ -594,13 +567,11 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
@@ -617,20 +588,17 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [0, -1, -175],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -640,15 +608,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [0, -1, -180],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -658,15 +624,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [-6, -1, -180],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -676,15 +640,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [6, -1, -190],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -694,8 +656,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
@@ -703,7 +664,6 @@
       {
         "rotation": [-90, 90, 0],
         "position": [6, -1, -195],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -713,15 +673,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [-5, -1, -200],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -731,15 +689,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [5, -1, -200],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -749,15 +705,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [1, -1, -210],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -767,15 +721,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [-6, -1, -210],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -785,8 +737,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
@@ -794,7 +745,6 @@
       {
         "rotation": [-90, 90, 0],
         "position": [5, -1, -220],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -804,15 +754,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [4, -1, -225],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -822,15 +770,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [-6, -1, -230],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -840,15 +786,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [6, -1, -235],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -858,15 +802,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [-3, -1, -240],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -876,8 +818,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
@@ -885,7 +826,6 @@
       {
         "rotation": [-90, 90, 0],
         "position": [3, -1, -240],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -895,15 +835,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [6, -1, -245],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -913,15 +851,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [0, -1, -250],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -931,15 +867,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [5, -1, -260],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -949,15 +883,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [0, -1, -265],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -967,8 +899,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
@@ -976,7 +907,6 @@
       {
         "rotation": [-90, 90, 0],
         "position": [3, -1, -270],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -986,15 +916,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [5, -1, -275],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -1004,15 +932,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [5, -1, -280],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -1022,15 +948,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [-6, -1, -290],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -1040,15 +964,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [3, -1, -300],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -1058,8 +980,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
@@ -1067,7 +988,6 @@
       {
         "rotation": [-90, 90, 0],
         "position": [-3, -1, -310],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -1077,8 +997,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
@@ -1094,15 +1013,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [-4, -1, -330],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -1112,15 +1029,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [4, -1, -340],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -1130,15 +1045,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [0, -1, -350],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -1148,8 +1061,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
@@ -1157,7 +1069,6 @@
       {
         "rotation": [-90, 90, 0],
         "position": [0.5, -1, -360],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -1167,15 +1078,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [0, -1, -365],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -1185,15 +1094,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [3, -1, -370],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -1203,15 +1110,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [-3, -1, -380],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -1221,15 +1126,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [-3, -1, -380],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -1239,8 +1142,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
@@ -1248,7 +1150,6 @@
       {
         "rotation": [-90, 90, 0],
         "position": [3, -1, -385],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -1258,15 +1159,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [6, -1, -390],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -1276,15 +1175,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [-6, -1, -395],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -1294,15 +1191,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [-6, -1, -395],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -1312,15 +1207,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [6, -1, -395],
-        // "position": [0,1 , -1],
         "scale": [0.02, 0.03, 0.04],
         "components": [
           {
@@ -1330,15 +1223,13 @@
           },
           {
             "type": "Collision",
-            "collisionType": "penalty"//,
-            //"effect": 25
+            "collisionType": "penalty" 
           }
         ]
       },
       {
         "rotation": [-90, 90, 0],
         "position": [0, -1, -410],
-        // "position": [0,1 , -1],
         "scale": [0.03, 0.06, 0.05],
         "components": [
           {
@@ -1364,8 +1255,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1393,8 +1283,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1422,8 +1311,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1451,8 +1339,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1480,8 +1367,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1510,8 +1396,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1539,8 +1424,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1568,8 +1452,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1597,8 +1480,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1626,8 +1508,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1656,8 +1537,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1685,8 +1565,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1714,8 +1593,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1743,8 +1621,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1772,8 +1649,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1802,8 +1678,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1831,8 +1706,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1860,8 +1734,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1889,8 +1762,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1918,8 +1790,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1948,8 +1819,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward" 
           },
           {
             "type": "Movement",
@@ -1977,8 +1847,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward"
           },
           {
             "type": "Movement",
@@ -2006,8 +1875,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward"
           },
           {
             "type": "Movement",
@@ -2035,8 +1903,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward"
           },
           {
             "type": "Movement",
@@ -2064,8 +1931,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward"
           },
           {
             "type": "Movement",
@@ -2094,8 +1960,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward"
           },
           {
             "type": "Movement",
@@ -2123,8 +1988,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward"
           },
           {
             "type": "Movement",
@@ -2152,8 +2016,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward"
           },
           {
             "type": "Movement",
@@ -2181,8 +2044,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward"
           },
           {
             "type": "Movement",
@@ -2210,8 +2072,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward"
           },
           {
             "type": "Movement",
@@ -2239,8 +2100,7 @@
           },
           {
             "type": "Collision",
-            "collisionType": "reward"//,
-            //"effect": 25
+            "collisionType": "reward"
           },
           {
             "type": "Movement",
@@ -2261,17 +2121,37 @@
       ///////////////////////////////////////////////////////////////////////
 
       ,{
-        "position": [0, -5,-10],
+        "position": [0, 1,-200],
+        "rotation": [0, 0, 45],
         "components": [
+          // {
+          //   "type": "light"
+          // },
           {
-            "type": "light"
+            "type": "light",
+            "typeOfLight": "SPOT",
+            "diffuse": [20, 8, 15],
+            "specular": [20, 8, 15],
+            "attenuation": [0.0, 1.0, 0.0],
+            "cone_angles.in": 0,
+            "cone_angles.out": 45
+            
           },
+          {
+            "type": "Movement",
+            "angularVelocity": [0, 90, 0]
+          }
+        ]
+      },
+      { 
+        "position": [0, 1,-100],
+        "components": [
           {
             "type": "light",
             "typeOfLight": "POINT",
-            "diffuse": [0, 0, 1],
-            "specular": [0, 0, 1],
-            "attenuation": [0.001, 0.001, 0.0001]
+            "diffuse": [10, 8, 5],
+            "specular": [10, 8, 5],
+            "attenuation": [0.0, 1.0, 0.0]
           },
           {
             "type": "Movement",
@@ -2281,15 +2161,13 @@
       },
       {
         "position": [0, -10, -40],
+        "rotation": [0, 0, 45],
         "components": [
-          {
-            "type": "light"
-          },
           {
             "type": "light",
             "typeOfLight": "DIRECTIONAL",
-            "diffuse": [1, 0, 0],
-            "specular": [1, 0, 0]
+            "diffuse": [1.2, 1.0, 0.8],
+            "specular": [1.2, 1.0, 0.8]
           } 
         ]
       }
