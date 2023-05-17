@@ -34,6 +34,9 @@
 - ### Menu State:
 ![first-menu](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/29161e0c-29db-497f-8266-b4ac09781d3f)
 
+- ### Game State:
+![image](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/79c0e9a4-a164-42e5-ad8c-535ee925c7c7)
+
 - ### Ending State:
   - Game Over:
 ![game-over](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/875b5afb-d9ae-4d73-9747-d8d2d4979c27)
