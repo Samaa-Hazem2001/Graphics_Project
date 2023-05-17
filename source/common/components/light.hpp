@@ -23,19 +23,24 @@ namespace our {
     class LightComponent : public Component {
     public:
 
-        // variable to set The type of the light
+        // indicates The type of the light
         int type; 
+        std::string lightType;
+
         // We also define the color & intensity of the light for each component of the 
-        //Phong model (Ambient, Diffuse, Specular).
+        // Phong model (Ambient, Diffuse, Specular).
         glm::vec3 diffuse, specular;
         glm::vec4 color;
+
         // indicates the intensity of the light
         glm::vec3 attenuation; // x*d^2 + y*d + z
+
         // for spot light: x: inner angle, y: outer angle
         glm::vec2 coneAngles; 
-        std::string lightType;
+
         // Reads light parameters from the given json object
         void deserialize(const nlohmann::json& data) override;
+        
         // identify it is a light component
         static std::string getID() { return "light"; }
 
