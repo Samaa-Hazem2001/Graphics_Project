@@ -55,7 +55,7 @@ namespace our {
 
     // lighting material class
     
-    class LightMaterial : public TexturedMaterial {
+    class LitMaterial : public TexturedMaterial {
     public:
         Texture2D* albedo;
         Texture2D* specular;
@@ -75,7 +75,7 @@ namespace our {
         } else if(type == "textured"){
             return new TexturedMaterial();
         } else if(type == "lighted"){
-            return new LightMaterial();
+            return new LitMaterial();
         }
          else {
             return new Material();

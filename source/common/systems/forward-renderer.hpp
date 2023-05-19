@@ -43,7 +43,7 @@ namespace our
 
         // Objects to support lighting
         std::vector<LightComponent*> lightSources;
-        LightMaterial* lightMaterial;
+        LitMaterial* lightMaterial;
         glm::vec3 skyTop;
         glm::vec3 skyMiddle;
         glm::vec3 skyBottom;

@@ -65,7 +65,7 @@ namespace our {
     }
 
     // ------------------- light material ------------------- //
-     void LightMaterial::setup() const {
+     void LitMaterial::setup() const {
         // call setup function
         TexturedMaterial::setup(); 
         // if it's albedo
@@ -131,7 +131,7 @@ namespace our {
     }
 
     // This function read the material data from a json object
-    void LightMaterial::deserialize(const nlohmann::json& data){
+    void LitMaterial::deserialize(const nlohmann::json& data){
         
         // read the texture data from a json object
         TexturedMaterial::deserialize(data); 
