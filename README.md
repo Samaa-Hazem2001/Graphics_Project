@@ -4,7 +4,7 @@
 - [Project setup ](#project-setup-)
 - [Technologies ](#technologies-)
 - [How to Play ](#how-to-play-)
-- [Screen Video ](#screen-vedio-)
+- [Screen Video ](#screen-video-)
 - [Screenshots ](#screenshots-)
 - [Contributors ](#contributors-)
 
