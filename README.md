@@ -28,7 +28,7 @@
 - Use ← , or A to move left
 - Use → , D to move right
 
-## Screen Vedio <a name = "screen-video"></a>
+## Screen Video <a name = "screen-video"></a>
 
 
 https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88630231/ac8e57de-148d-4d72-9110-257a18430ee5
