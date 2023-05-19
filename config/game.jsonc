@@ -37,7 +37,9 @@
         "white": "assets/textures/white.png",
         "black": "assets/textures/black.jpg",
         "galaxy_gradient": "assets/textures/galaxy_gradient.jpg",
-        "home":"assets/textures/grass_home.jpg"
+        "home":"assets/textures/grass_home.jpg",
+        "gray":"assets/textures/gray.jpeg"
+
       },
       "meshes": {
         "plane": "assets/models/plane.obj",
@@ -108,7 +110,7 @@
           ,
           "albedo": "floor",
           "specular": "white",
-          "roughness": "galaxy_gradient", //gray
+          "roughness": "gray", //gray
           "emissive": "black",
           "ambient_occlusion": "white"
         },
@@ -2130,8 +2132,8 @@
           {
             "type": "light",
             "lightType": "SPOT",
-            "diffuse": [20, 8, 15],
-            "specular": [20, 8, 15],
+            "diffuse": [50, 8, 8],
+            "specular": [50, 8, 8],
             "attenuation": [0.0, 1.0, 0.0],
             "coneAngles.in": 0,
             "coneAngles.out": 45
@@ -2149,8 +2151,8 @@
           {
             "type": "light",
             "lightType": "POINT",
-            "diffuse": [10, 8, 5],
-            "specular": [10, 8, 5],
+            "diffuse": [5, 5, 20],
+            "specular": [5, 5, 20],
             "attenuation": [0.0, 1.0, 0.0]
           },
           {
@@ -2160,14 +2162,14 @@
         ]
       },
       {
-        "position": [0, -10, -40],
+        "position": [100, -5, -40],
         "rotation": [0, 0, 45],
         "components": [
           {
             "type": "light",
             "lightType": "DIRECTIONAL",
-            "diffuse": [1.2, 1.0, 0.8],
-            "specular": [1.2, 1.0, 0.8]
+            "diffuse": [2.0, 2.0, 2.0],
+            "specular": [1.0, 1.0, 1.0]
           } 
         ]
       }
