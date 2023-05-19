@@ -288,7 +288,7 @@ Parameters
         {
              command.material->setup();
             // if the material of the object is lighted
-            if (auto light_material = dynamic_cast<LightMaterial *>(command.material); light_material)
+            if (auto light_material = dynamic_cast<LitMaterial *>(command.material); light_material)
             {
                 // set VP to VP matrix
                 light_material->shader->set("VP", VP);
