@@ -42,7 +42,16 @@ https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88630231/ac8e57de-148
 ![first-menu](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/29161e0c-29db-497f-8266-b4ac09781d3f)
 
 - ### Game State:
-![image](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/79c0e9a4-a164-42e5-ad8c-535ee925c7c7)
+We have all types of light in our game: directional, spot and point.
+  - Directional light:
+  ![directional-light](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/20da2a05-2ddb-4a34-a0c4-cbd20e268aa4)
+  
+  - Spot Light:
+  ![spot-light](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/2b393192-b297-47d0-b76a-ff1bb0046004)
+
+  - Point Light:
+  ![point-light](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/fd0b5c2f-b3a6-423f-8fc1-c036f3c4bc12)
+
 
 - ### Ending State:
   - Game Over:
