@@ -54,7 +54,13 @@ namespace our {
     };
 
     // lighting material class
-    
+    // This material adds uniforms (besides uniforms from Tinted Material & Textured Material)
+    // The uniforms are:
+    // albedo: which is used to represent the diffuse of the material.
+    // specular: which is used to represent the specular of the material.
+    // ambient_occlusion: which is used to represent how much ambient each part should get, not all locations get the same ambient.
+    // roughness: which is used to represent the shininess of the material.
+    // emissive: which is used to make the object emit its own light
     class LitMaterial : public TexturedMaterial {
     public:
         Texture2D* albedo;
@@ -77,7 +83,7 @@ namespace our {
         } else if(type == "lighted"){
             return new LitMaterial();
         }
-         else {
+        else {
             return new Material();
         }
     }

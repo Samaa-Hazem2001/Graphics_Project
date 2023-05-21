@@ -35,7 +35,7 @@ namespace our
         // set specular value
         specular = glm::vec3(data.value("specular", glm::vec3(1, 1, 1)));
 
-        // check if type != 0, it's not DIRECTIONAL light, because DIRECTIONAL light havn't attenuation
+        // check if type != 0, it's not DIRECTIONAL light, because DIRECTIONAL light doesn't have attenuation
         if (type != 0)
             // set attenuation value 
             attenuation = glm::vec3(data.value("attenuation", glm::vec3(1, 0, 0)));
