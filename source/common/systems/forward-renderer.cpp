@@ -290,6 +290,7 @@ Parameters
             // if the material of the object is lighted
             if (auto light_material = dynamic_cast<LitMaterial *>(command.material); light_material)
             {
+                // set sky lights to values
             glm::vec3 sky_top = glm::vec3(0.01f, 0.01f, 0.01f);
             glm::vec3 sky_middle = glm::vec3(0.01f, 0.01f, 0.01f);
             glm::vec3 sky_bottom = glm::vec3(0.01f, 0.01f, 0.01f);
@@ -303,6 +304,8 @@ Parameters
                 light_material->shader->set("M_IT", glm::transpose(glm::inverse(command.localToWorld)));
                 // set light_count to size of lightSources
                 light_material->shader->set("light_count", (int)lightSources.size());
+                
+                // send sky lights to shader
             light_material->shader->set("sky.top", sky_top);
             light_material->shader->set("sky.middle", sky_middle);
             light_material->shader->set("sky.bottom", sky_bottom);
