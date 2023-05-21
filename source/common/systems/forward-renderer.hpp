@@ -55,23 +55,23 @@ namespace our
         void destroy();
         // This function should be called every frame to draw the given world
         void render(World* world);
-        void deserialize(const nlohmann::json &data) 
-        {
-            if (data.contains("skyTop"))
-            {
+        // void deserialize(const nlohmann::json &data) 
+        // {
+        //     if (data.contains("skyTop"))
+        //     {
             
-               skyTop= glm::vec3 (data["skyTop"][0],data["skyTop"][1],data["skyTop"][2]  );
-            }
-            if (data.contains("skyMiddle"))
-            {
-               skyMiddle= glm::vec3 (data["skyMiddle"][0],data["skyMiddle"][1],data["skyMiddle"][2]  );
-            }
-            if (data.contains("skyBottom"))
-            {
-               skyBottom= glm::vec3 (data["skyBottom"][0],data["skyBottom"][1],data["skyBottom"][2]  );
-            }
+        //        skyTop= glm::vec3 (data["skyTop"][0],data["skyTop"][1],data["skyTop"][2]  );
+        //     }
+        //     if (data.contains("skyMiddle"))
+        //     {
+        //        skyMiddle= glm::vec3 (data["skyMiddle"][0],data["skyMiddle"][1],data["skyMiddle"][2]  );
+        //     }
+        //     if (data.contains("skyBottom"))
+        //     {
+        //        skyBottom= glm::vec3 (data["skyBottom"][0],data["skyBottom"][1],data["skyBottom"][2]  );
+        //     }
 
-        }
+        // }
 
 
     };
