@@ -66,17 +66,18 @@ namespace our {
 
     // ------------------- light material ------------------- //
      void LitMaterial::setup() const {
-        // call setup function
+        // call setup function for textured material
         TexturedMaterial::setup(); 
+
         // if it's albedo
         if (albedo){
             // Here we set the active texture unit to 0 
             glActiveTexture(GL_TEXTURE0);
             // then bind the texture to it
             albedo->bind();
-            // binds this sampler to 0
+            // binds this sampler to texture unit 0
             sampler->bind(0);
-            // set albedo to 0
+            // send the unit number 0 to 'albedo' in the uniform variable material
             shader->set("material.albedo",0);
         }
 
@@ -86,9 +87,9 @@ namespace our {
             glActiveTexture(GL_TEXTURE1);  
             // then bind the texture to it
             specular->bind();
-            // binds this sampler to 1
+            // binds this sampler to texture unit 1
             sampler->bind(1);
-            // set specular to 1
+            // send the unit number 1 to 'specular' in the uniform variable material
             shader->set("material.specular",1);
         }
         
@@ -98,9 +99,9 @@ namespace our {
             glActiveTexture(GL_TEXTURE2);  
             // then bind the texture to it
             ambient_occlusion->bind();
-            // binds this sampler to 2
+            // binds this sampler to texture unit 2
             sampler->bind(2);
-            // set ambient_occlusion to 1
+            // send the unit number 2 to 'ambient_occlusion' in the uniform variable material
             shader->set("material.ambient_occlusion",2);
         }
         
@@ -110,9 +111,9 @@ namespace our {
             glActiveTexture(GL_TEXTURE3);  
             // then bind the texture to it
             roughness->bind();
-            // binds this sampler to 3
+            // binds this sampler to texture unit 3
             sampler->bind(3);
-            // set roughness to 3
+            // send the unit number 3 to 'roughness' in the uniform variable material
             shader->set("material.roughness",3);
         }
   
@@ -122,9 +123,9 @@ namespace our {
             glActiveTexture(GL_TEXTURE4); 
             // then bind the texture to it 
             emissive->bind();
-            // binds this sampler to 4
+            // binds this sampler to texture unit 4
             sampler->bind(4);
-            // set emissive to 4
+            // send the unit number 4 to 'emissive' in the uniform variable material
             shader->set("material.emissive",4);
         }
         glActiveTexture(GL_TEXTURE0);
