@@ -30,7 +30,6 @@ namespace our {
         // We also define the color & intensity of the light for each component of the 
         // Phong model (Ambient, Diffuse, Specular).
         glm::vec3 diffuse, specular;
-        glm::vec4 color;
 
         // indicates the intensity of the light
         glm::vec3 attenuation; // x*d^2 + y*d + z

@@ -87,7 +87,7 @@ void main(){
     for(int i = 0; i < clamped_light_count; i++){
         Light light = lights[i];
            // Then we get the light direction 
-        vec3 direction_to_light = -light.direction;
+        vec3 direction_to_light = normalize(-light.direction);
         if(light.type != DIRECTIONAL){
             direction_to_light = normalize(light.position - fs_in.world);
         }
