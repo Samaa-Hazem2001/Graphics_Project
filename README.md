@@ -39,26 +39,26 @@ https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88630231/ac8e57de-148
 
 ## Screenshots <a name = "screen-shots"></a>
 - ### Menu State:
-![first-menu](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/29161e0c-29db-497f-8266-b4ac09781d3f)
+![first-menu](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/a579afc7-41c7-400e-a247-0429465aa985)
 
 - ### Game State:
 We have all types of light in our game: directional, spot and point.
   - Directional light:
-  ![directional-light](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/20da2a05-2ddb-4a34-a0c4-cbd20e268aa4)
+ ![directional-light](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/69fcc49a-c774-420b-9b16-e867e8d76d98)
   
   - Spot Light:
-  ![spot-light](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/2b393192-b297-47d0-b76a-ff1bb0046004)
+![spot-light](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/edad4c3a-8d7a-4d45-b0df-d665495ef356)
 
   - Point Light:
-  ![point-light](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/fd0b5c2f-b3a6-423f-8fc1-c036f3c4bc12)
+![point-light](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/890d472d-a0df-4671-9767-f2b119b9459e)
 
 
 - ### Ending State:
   - Game Over:
-![game-over](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/875b5afb-d9ae-4d73-9747-d8d2d4979c27)
+![game-over](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/1dfcbcef-22d6-4951-9652-37f778130625)
 
   - Winning:
-![winning](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/3a163490-e850-4316-b78d-14336b1d88d5)
+![winning](https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88618793/21909f89-84a7-4ffe-acab-e68d54954969)
 
 ## Contributors <a name = "Contributors"></a>
 
