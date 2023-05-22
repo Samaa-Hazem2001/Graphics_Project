@@ -30,8 +30,7 @@
 
 ## Screen Video <a name = "screen-video"></a>
 
-
-https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88630231/ac8e57de-148d-4d72-9110-257a18430ee5
+https://github.com/Samaa-Hazem2001/Graphics_Project/assets/88630231/0d2b1b75-eb7c-4ef1-b3ac-b2fbf26a9be2
 
 
 
